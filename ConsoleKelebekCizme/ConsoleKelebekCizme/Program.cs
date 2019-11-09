@@ -7,8 +7,16 @@ namespace ConsoleKelebekCizme
         static void Main(string[] args)
         {
             //15 Değeriyle Çiz Bebeğim :-)
-            Console.WriteLine("----Kelebek----");
-            printKelebekCiz(15);
+            int boyut = 15;
+
+            //Başlık değeri atama
+            string baslik = "Kelebek";
+
+            //Başlığı Yazdır
+            printBaslik(baslik, boyut);
+
+            //Kelebek Çizdirme
+            printKelebekCiz(boyut);
 
             Console.Read();
         }
@@ -67,6 +75,28 @@ namespace ConsoleKelebekCizme
             println();
         }
 
-
+        static void printBaslik(string kelime,int boyut)
+        {
+            int kelimeBoyutu = kelime.Length;
+            string yeniKelime = "";
+            if (boyut>kelimeBoyutu)
+            {
+                int yildiz = (boyut - kelimeBoyutu)/2;
+                for (int i = 0; i < yildiz; i++)
+                {
+                    yeniKelime += "-";         
+                }
+                yeniKelime += kelime;
+                for (int i = 0; i < yildiz; i++)
+                {
+                    yeniKelime += "-";
+                }
+                Console.WriteLine(yeniKelime);
+            }
+            else
+            {
+                Console.WriteLine(kelime);
+            }
+        }
     }
 }
