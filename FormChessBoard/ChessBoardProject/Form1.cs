@@ -10,7 +10,7 @@ namespace ChessBoardProject
         {
             InitializeComponent();
             setImage(buttonBoyamaMavi);
-            bitmap2 = satranc.getBitmap(pictureBox1.Width, pictureBox1.Height);
+            
         }
         private void ImageBoyama(object sender, EventArgs e)
         {
@@ -48,10 +48,12 @@ namespace ChessBoardProject
         int i2 = 0, j2 = 0;
         Bitmap bitmap2;
         Color main_color2 = Color.MediumBlue;
-        Color side_color2 = Color.GhostWhite;
+        Color side_color2 = Color.Cyan;
 
         private void button6_Click(object sender, EventArgs e)
         {
+            bitmap2 = satranc.getBitmap(pictureBox1.Width, pictureBox1.Height);
+            i2 = 0; j2 = 0;
             main_color2 = (sender as Button).BackColor;
 
             timer1.Stop();
@@ -60,11 +62,11 @@ namespace ChessBoardProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (i2 < pictureBox1.Width)
+            if (i2 < pictureBox1.Width / 16)
             {
                 if (j2 < pictureBox1.Height)
                 {
-                    setBoyaBeni8(bitmap2, i2, j2, main_color2, side_color2);
+                    setBoyaBeni16(bitmap2, i2, j2, main_color2, side_color2);
                     pictureBox1.Image = bitmap2;
 
                     j2++;
@@ -85,19 +87,22 @@ namespace ChessBoardProject
             Color color = satranc.getSatrancPixelColor(bitmap, i, j, main, side);
             satranc.setPixelBoyama(bitmap, i, j, color);
         }
-        private void setBoyaBeni8(Bitmap bitmap, int i, int j, Color main, Color side)
+        private void setBoyaBeni16(Bitmap bitmap, int i, int j, Color main, Color side)
         {
             int kareGenislik = satranc.getTekKare(bitmap.Width);
-            int tempI = i;
 
-            for (int wuf = 0; i + wuf < bitmap.Width; wuf+=kareGenislik)
+            int ileri,geri;
+            for (int wuf = 0; i + wuf < bitmap.Width; wuf += kareGenislik)
             {
-                Color color1 = satranc.getSatrancPixelColor(bitmap, tempI, j, main, side);
-                satranc.setPixelBoyama(bitmap, i+wuf, j, color1);
-            }
-            
-            
+                ileri = i + wuf;
+                Color color1 = satranc.getSatrancPixelColor(bitmap, ileri, j, main, side);
+                satranc.setPixelBoyama(bitmap, ileri, j, color1);
 
+                geri = bitmap.Width - ileri - 1;
+               
+                Color color2 = satranc.getSatrancPixelColor(bitmap, geri, j, main, side);
+                satranc.setPixelBoyama(bitmap, geri, j, color2);
+            }
         }
     }
 }
