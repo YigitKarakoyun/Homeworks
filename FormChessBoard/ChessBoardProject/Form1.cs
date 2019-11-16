@@ -48,7 +48,7 @@ namespace ChessBoardProject
         int i2 = 0, j2 = 0;
         Bitmap bitmap2;
         Color main_color2 = Color.MediumBlue;
-        Color side_color2 = Color.Cyan;
+        Color side_color2 = Color.GhostWhite;
 
         private void button6_Click(object sender, EventArgs e)
         {
