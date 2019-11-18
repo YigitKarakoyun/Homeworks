@@ -11,43 +11,71 @@ namespace BubbleScreenServer
         {
             InitializeComponent();
         }
+        //-------------------------------TANIMLAMA-------------------------------------------
+        
+        //SINIFLAR
+        c_ImageGetter image = new c_ImageGetter();
+
+        //BALON RESMİ
         Image bubble;
+
+        //EKRAN KORUYUCU SAYMA DEĞİŞKENİ
+        int countEkranKoruyucu = 0;
+        //-------------------------------------------------------------------------------------
+
+        //İLK YAPILACAKLAR
         private void Form1_Load(object sender, EventArgs e)
         {
-            bubble = Resources.water_bubble;
-            BackgroundImage = bubble;
-            WindowState = FormWindowState.Minimized;
+            //RESİMLERİ ALMA
+            bubble = image.GetBallonImage();
+            BackgroundImage = image.GetBackGroundImage();
 
+            //EKRAN KORUYUCU SAYIMINI BAŞLAT
             setTimerSifirla();
             setTimerBaslat();
+
+            //
+            PictureBox[] pictureBoxes = getPictureBoxs(2);
+            addPictureBoxs(pictureBoxes);
         }
-        int round = 0;
+        //-------------------------------------------------------------------------------------
+        //EKRAN KORUYUCUYU ÇALIŞTIRMAK
         private void timer1_Tick(object sender, EventArgs e)
         {
-            round++;
-            if (round > 1)
+            countEkranKoruyucu++;
+            if (countEkranKoruyucu > 1)
             {
                 WindowState = FormWindowState.Maximized;
                 setTimerSifirla();
                
             }
         }
+        //-------------------------------------------------------------------------------------
+        //EKRAN KORUYUCU TİMER RESETLEME VE DURDURMA YAPAR
         public void setTimerSifirla()
         {
-            round = 0;
-            timer1.Stop();
-        }
-        public void setTimerBaslat()
-        {
-            timer1.Start();
+            countEkranKoruyucu = 0;
+            timerEkranKoruyucu.Stop();
         }
 
+        //-------------------------------------------------------------------------------------
+        //EKRAN KORUYUCU TİMER BAŞLATIR
+        public void setTimerBaslat()
+        {
+            timerEkranKoruyucu.Start();
+        }
+
+        //-------------------------------------------------------------------------------------
+        //KUCULTME METODU
         private void kucult()
         {
             WindowState = FormWindowState.Minimized;
             setTimerSifirla();
             setTimerBaslat();
         }
+
+        //-------------------------------------------------------------------------------------
+        //EKRAN KORUYUCUDAN ÇIKMA
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             Button button = sender as Button;
@@ -58,6 +86,39 @@ namespace BubbleScreenServer
             }
         }
 
-       
+        //-------------------------------------------------------------------------------------
+        //BALON OLUŞTURMA
+        private void timerBalloon_Tick(object sender, EventArgs e)
+        {
+          
+        }
+
+        //BALON OLUŞTURMA
+        private PictureBox getPictureBox()
+        {
+            Image tempImage = image.GetBallonImage();
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Width = tempImage.Width;
+            pictureBox.Height = tempImage.Height;
+            pictureBox.Image = tempImage;
+            pictureBox.BackColor = Color.Transparent;
+            return pictureBox;
+        }
+        private PictureBox[] getPictureBoxs(int adet)
+        {
+            PictureBox[] temp = new PictureBox[adet];
+            for (int i = 0; i < adet; i++)
+            {
+                temp[i] = getPictureBox();
+            }
+            return temp;
+        }
+        private void addPictureBoxs(PictureBox[] pictureBoxes)
+        {
+            foreach (PictureBox item in pictureBoxes)
+            {
+                Controls.Add(item);
+            }
+        }
     }
 }
