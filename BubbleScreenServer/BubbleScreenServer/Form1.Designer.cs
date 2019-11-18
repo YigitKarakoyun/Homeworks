@@ -40,6 +40,7 @@
             // 
             // timerBalloon
             // 
+            this.timerBalloon.Interval = 10;
             this.timerBalloon.Tick += new System.EventHandler(this.timerBalloon_Tick);
             // 
             // Form1
