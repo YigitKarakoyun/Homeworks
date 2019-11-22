@@ -42,7 +42,7 @@ namespace BubbleScreenServer
             //
 
         }
-        int ekrankoruyucu_beklemeSuresi = 59;
+        int ekrankoruyucu_beklemeSuresi = 1;
         //-------------------------------------------------------------------------------------
         //EKRAN KORUYUCUYU ÇALIŞTIRMAK
         private void timer1_Tick(object sender, EventArgs e)
@@ -141,8 +141,6 @@ namespace BubbleScreenServer
                 {
                     balonYonX *= -1;
                     setRandomBalonDirection();
-
-
                 }
 
             }
@@ -209,17 +207,6 @@ namespace BubbleScreenServer
             }
         }
 
-        //
-        //private void setBallonlari_Olustur()
-        //{
-        //    PictureBox[] pictureBoxes = getPictureBoxs(2);
-        //    addPictureBoxs(pictureBoxes);
-        //    for (int i = 0; i < pictureBoxes.Length; i++)
-        //    {
-        //        PictureBox pictureBox = pictureBoxes[i];
-        //        pictureBox.Location = random.GetRandomPoint(this.Size);
-        //    }
-        //}
         private PictureBox getBalonOlustur()
         {
             PictureBox pictureBox = getPictureBox();
