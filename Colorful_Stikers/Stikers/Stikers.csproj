@@ -84,9 +84,6 @@
     <None Include="Resources\plus-empty2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Household-Waste-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\cop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿namespace ToDoList
+﻿namespace Stikers
 {
     partial class Form1
     {
@@ -61,7 +61,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.48252F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.51748F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.Controls.Add(this.panelAyarlar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelEkle, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 3, 0);
@@ -82,7 +82,7 @@
             this.panelAyarlar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelAyarlar.Controls.Add(this.lblAyarlar);
             this.panelAyarlar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAyarlar.Location = new System.Drawing.Point(284, 0);
+            this.panelAyarlar.Location = new System.Drawing.Point(282, 0);
             this.panelAyarlar.Margin = new System.Windows.Forms.Padding(0);
             this.panelAyarlar.Name = "panelAyarlar";
             this.panelAyarlar.Size = new System.Drawing.Size(64, 50);
@@ -116,7 +116,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panelSil);
-            this.panel3.Location = new System.Drawing.Point(348, 0);
+            this.panel3.Location = new System.Drawing.Point(346, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(50, 50);
