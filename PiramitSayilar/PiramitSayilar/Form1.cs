@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace PiramitSayilar
 {
     public partial class Form1 : Form
     {
@@ -18,14 +18,19 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPiramid_Click(object sender, EventArgs e)
         {
-            class_Sayilar sayilar = new class_Sayilar();
+            class_Piramid sayilar = new class_Piramid();
+            
+            //İSTENEN DEĞERİ ÇEKME
             int sayi = (int)numericUpDown1.Value;
+
+            //DİZİLERİ GEREKLİ VERİLERLE DOLDURMA
             sayilar.setDizi(sayi);
-            sayilar.setBoslukDizisi(sayi);
-            string temp = sayilar.getString2(sayi);
-            label1.Text = temp;
+            sayilar.setDizininBosluklari(sayi);
+
+            //SONUCU YAZDIRMA
+            label1.Text = sayilar.getStringSolBosluklariyla(sayi); ;
         }
     }
 }

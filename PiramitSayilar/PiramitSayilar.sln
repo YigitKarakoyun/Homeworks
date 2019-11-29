@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiramitSayilar", "WindowsFormsApp1\PiramitSayilar.csproj", "{DF04DB24-037A-456C-8FAA-23DFCBAF4EBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiramitSayilar", "PiramitSayilar\PiramitSayilar.csproj", "{DF04DB24-037A-456C-8FAA-23DFCBAF4EBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

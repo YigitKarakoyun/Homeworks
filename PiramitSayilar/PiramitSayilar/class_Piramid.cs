@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace WindowsFormsApp1
+namespace PiramitSayilar
 {
-    class class_Sayilar
+    class class_Piramid
     {
+        #region SATIRBİLGİSİ VE BOŞLUK OLUŞTURMA
+        //İlgili Satırı String Döndürür(Bosluksuz)
         public string getSatir(int sayi)
         {
             string temp = " ";
@@ -19,6 +21,7 @@ namespace WindowsFormsApp1
 
             return temp;
         }
+        //İstenen Kadar Boşluk Oluşturur
         public string getBosluk(int bosluk)
         {
             string temp = "";
@@ -28,23 +31,30 @@ namespace WindowsFormsApp1
             }
             return temp;
         }
+        #endregion
+
+        #region DİZİ DEĞİŞKENLERİ
         string[] dizi;
-        string[] boslukDizi;
+        string[] diziBosluklariTutan;
+        #endregion
+
+        #region DİZİLERİ DOLDURMA
+        //String Dizisini Doldurur(Soldan Bosluksuz Dizi)
         public void setDizi(int sayi)
         {
             dizi = new string[sayi];
-            boslukDizi = new string[sayi];
+            diziBosluklariTutan = new string[sayi];
 
             for (int i = sayi - 1; i >= 0; i--)
             {
                 dizi[i] = getSatir(i + 1);
-                
             }
         }
-        public void setBoslukDizisi(int sayi)
+        //Soldaki olması gereken boşlukları tutan diziyi doldurur
+        public void setDizininBosluklari(int sayi)
         {
             int sonIndeks = sayi - 1;
-            boslukDizi[sonIndeks] = " ";
+            diziBosluklariTutan[sonIndeks] = " ";
             for (int i = sonIndeks; i > 0; i--)
             {
                 int s1 = dizi[i].Length;
@@ -52,10 +62,14 @@ namespace WindowsFormsApp1
                 decimal temp = (s1 - s2) / 2;
                 
                 int sonuc = (int)Math.Ceiling(temp);
-                boslukDizi[i - 1] = getBosluk(sonuc)+boslukDizi[i];
+                diziBosluklariTutan[i - 1] = getBosluk(sonuc)+diziBosluklariTutan[i];
             }
         }
+        #endregion
 
+        #region DİZİLERİ KULLANARAK SONUÇ DÖNDÜRME
+        //(Sola yapışık)
+        //Tum Bilgiyi Tek String Olarak Dondurur
         public string getString(int sayi)
         {
             string temp = "";
@@ -66,15 +80,18 @@ namespace WindowsFormsApp1
             return temp;
 
         }
-        public string getString2(int sayi)
-        {
+        //(Ortada)
+        //Tum Bilgiyi (Sol)Boşluklarıyla Bir Tek String Olarak Dondurur
+        public string getStringSolBosluklariyla(int sayi)
+        { 
             string temp = "";
             for (int i = 0; i < sayi; i++)
             {
-                temp += boslukDizi[i]+dizi[i] + "\n";
+                temp += diziBosluklariTutan[i]+dizi[i] + "\n";
             }
             return temp;
 
         }
+        #endregion
     }
 }
