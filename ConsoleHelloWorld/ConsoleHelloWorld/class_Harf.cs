@@ -7,58 +7,62 @@ namespace ConsoleHelloWorld
     {
         List<string> getHarfler(int boyut);
     }
-    class class_H : IHarf
+    class class_List
     {
-        List<string> temp;
-        public class_H()
+        protected List<string> harfListesi = new List<string>();
+        protected bool GetBoyutYanlisMi(int boyut)
         {
-            temp = new List<string>();
+            if (boyut < 3 || boyut > 7){ return true; }
+            return false;
         }
+    }
+    class class_H : class_List, IHarf
+    {
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7) { return null; }
+            if (GetBoyutYanlisMi(boyut)) { return null; }
 
-            temp.Clear();
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("C C");
-                    temp.Add("CCC");
-                    temp.Add("C C");
+                    harfListesi.Add("C C");
+                    harfListesi.Add("CCC");
+                    harfListesi.Add("C C");
                     break;
                 case 4:
 
-                    temp.Add("C  C");
-                    temp.Add("CCCC");
-                    temp.Add("C  C");
+                    harfListesi.Add("C  C");
+                    harfListesi.Add("CCCC");
+                    harfListesi.Add("C  C");
 
                     break;
 
                 case 5:
-                    temp.Add("C   C");
-                    temp.Add("C   C");
-                    temp.Add("CCCCC");
-                    temp.Add("C   C");
-                    temp.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("CCCCC");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
                     //System.Windows.Forms.MessageBox.Show(temp[0].Length+"-"+ temp[0]+"-");
 
                     break;
                 case 6:
-                    temp.Add("C    C");
-                    temp.Add("C    C");
-                    temp.Add("CCCCCC");
-                    temp.Add("C    C");
-                    temp.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("CCCCCC");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
 
                     break;
                 case 7:
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("CCCCCCC");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("CCCCCCC");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
 
                     break;
                 default:
@@ -66,63 +70,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-    class class_E : IHarf
+    class class_E : class_List, IHarf
     {
-        List<string> temp;
-        public class_E()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("CCC");
-                    temp.Add("C  ");
-                    temp.Add("CCC");
+                    harfListesi.Add("CCC");
+                    harfListesi.Add("C  ");
+                    harfListesi.Add("CCC");
                     break;
                 case 4:
 
-                    temp.Add("CCCC");
-                    temp.Add("CC  ");
-                    temp.Add("CCCC");
+                    harfListesi.Add("CCCC");
+                    harfListesi.Add("CC  ");
+                    harfListesi.Add("CCCC");
 
                     break;
 
                 case 5:
-                    temp.Add("CCCCC");
-                    temp.Add("C    ");
-                    temp.Add("CCC  ");
-                    temp.Add("C    ");
-                    temp.Add("CCCCC");
+                    harfListesi.Add("CCCCC");
+                    harfListesi.Add("C    ");
+                    harfListesi.Add("CCC  ");
+                    harfListesi.Add("C    ");
+                    harfListesi.Add("CCCCC");
 
                     break;
                 case 6:
-                    temp.Add("CCCCCC");
-                    temp.Add("C     ");
-                    temp.Add("CCCCC ");
-                    temp.Add("C     ");
-                    temp.Add("CCCCCC");
+                    harfListesi.Add("CCCCCC");
+                    harfListesi.Add("C     ");
+                    harfListesi.Add("CCCCC ");
+                    harfListesi.Add("C     ");
+                    harfListesi.Add("CCCCCC");
 
                     break;
                 case 7:
-                    temp.Add("CCCCCCC");
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("CCCCCCC");
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("CCCCCCC");
+                    harfListesi.Add("CCCCCCC");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("CCCCCCC");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("CCCCCCC");
 
                     break;
                 default:
@@ -130,63 +127,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-    class class_L : IHarf
+    class class_L : class_List, IHarf
     {
-        List<string> temp;
-        public class_L()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("C  ");
-                    temp.Add("C  ");
-                    temp.Add("CCC");
+                    harfListesi.Add("C  ");
+                    harfListesi.Add("C  ");
+                    harfListesi.Add("CCC");
                     break;
                 case 4:
 
-                    temp.Add("C   ");
-                    temp.Add("C   ");
-                    temp.Add("CCCC");
+                    harfListesi.Add("C   ");
+                    harfListesi.Add("C   ");
+                    harfListesi.Add("CCCC");
 
                     break;
 
                 case 5:
-                    temp.Add("C    ");
-                    temp.Add("C    ");
-                    temp.Add("C    ");
-                    temp.Add("C    ");
-                    temp.Add("CCCCC");
+                    harfListesi.Add("C    ");
+                    harfListesi.Add("C    ");
+                    harfListesi.Add("C    ");
+                    harfListesi.Add("C    ");
+                    harfListesi.Add("CCCCC");
 
                     break;
                 case 6:
-                    temp.Add("C     ");
-                    temp.Add("C     ");
-                    temp.Add("C     ");
-                    temp.Add("C     ");
-                    temp.Add("CCCCCC");
+                    harfListesi.Add("C     ");
+                    harfListesi.Add("C     ");
+                    harfListesi.Add("C     ");
+                    harfListesi.Add("C     ");
+                    harfListesi.Add("CCCCCC");
 
                     break;
                 case 7:
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("C      ");
-                    temp.Add("CCCCCCC");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("C      ");
+                    harfListesi.Add("CCCCCCC");
 
                     break;
                 default:
@@ -194,64 +184,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-
-    class class_O : IHarf
+    class class_O : class_List, IHarf
     {
-        List<string> temp;
-        public class_O()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("CCC");
-                    temp.Add("C C");
-                    temp.Add("CCC");
+                    harfListesi.Add("CCC");
+                    harfListesi.Add("C C");
+                    harfListesi.Add("CCC");
                     break;
                 case 4:
 
-                    temp.Add("CCCC");
-                    temp.Add("C  C");
-                    temp.Add("CCCC");
+                    harfListesi.Add("CCCC");
+                    harfListesi.Add("C  C");
+                    harfListesi.Add("CCCC");
 
                     break;
 
                 case 5:
-                    temp.Add("CCCCC");
-                    temp.Add("C   C");
-                    temp.Add("C   C");
-                    temp.Add("C   C");
-                    temp.Add("CCCCC");
+                    harfListesi.Add("CCCCC");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("CCCCC");
 
                     break;
                 case 6:
-                    temp.Add("CCCCCC");
-                    temp.Add("C    C");
-                    temp.Add("C    C");
-                    temp.Add("C    C");
-                    temp.Add("CCCCCC");
+                    harfListesi.Add("CCCCCC");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("CCCCCC");
 
                     break;
                 case 7:
-                    temp.Add("CCCCCCC");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("CCCCCCC");
+                    harfListesi.Add("CCCCCCC");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("CCCCCCC");
 
                     break;
                 default:
@@ -259,64 +241,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-
-    class class_W : IHarf
+    class class_W : class_List, IHarf
     {
-        List<string> temp;
-        public class_W()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("C C");
-                    temp.Add("CCC");
-                    temp.Add("C C");
+                    harfListesi.Add("C C");
+                    harfListesi.Add("CCC");
+                    harfListesi.Add("C C");
                     break;
                 case 4:
 
-                    temp.Add("C C C");
-                    temp.Add("CCCCC");
-                    temp.Add("C   C");
+                    harfListesi.Add("C C C");
+                    harfListesi.Add("CCCCC");
+                    harfListesi.Add("C   C");
 
                     break;
 
                 case 5:
-                    temp.Add("C   C");
-                    temp.Add("C   C");
-                    temp.Add("C C C");
-                    temp.Add("CC CC");
-                    temp.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C C C");
+                    harfListesi.Add("CC CC");
+                    harfListesi.Add("C   C");
 
                     break;
                 case 6:
-                    temp.Add("C    C");
-                    temp.Add("C    C");
-                    temp.Add("C CC C");
-                    temp.Add("CC  CC");
-                    temp.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C CC C");
+                    harfListesi.Add("CC  CC");
+                    harfListesi.Add("C    C");
 
                     break;
                 case 7:
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C  C  C");
-                    temp.Add("C C C C");
-                    temp.Add("CC   CC");
-                    temp.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C  C  C");
+                    harfListesi.Add("C C C C");
+                    harfListesi.Add("CC   CC");
+                    harfListesi.Add("C     C");
 
                     break;
                 default:
@@ -324,63 +298,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-    class class_R : IHarf
+    class class_R : class_List, IHarf
     {
-        List<string> temp;
-        public class_R()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("CCC");
-                    temp.Add("CCC");
-                    temp.Add("C C");
+                    harfListesi.Add("CCC");
+                    harfListesi.Add("CCC");
+                    harfListesi.Add("C C");
                     break;
                 case 4:
 
-                    temp.Add("CCCC");
-                    temp.Add("CCCC");
-                    temp.Add("C  C");
+                    harfListesi.Add("CCCC");
+                    harfListesi.Add("CCCC");
+                    harfListesi.Add("C  C");
 
                     break;
 
                 case 5:
-                    temp.Add("CCCCC");
-                    temp.Add("C   C");
-                    temp.Add("CCCCC");
-                    temp.Add("C  C ");
-                    temp.Add("C   C");
+                    harfListesi.Add("CCCCC");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("CCCCC");
+                    harfListesi.Add("C  C ");
+                    harfListesi.Add("C   C");
 
                     break;
                 case 6:
-                    temp.Add("CCCCCC");
-                    temp.Add("C    C");
-                    temp.Add("CCCCCC");
-                    temp.Add("C   C ");
-                    temp.Add("C    C");
+                    harfListesi.Add("CCCCCC");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("CCCCCC");
+                    harfListesi.Add("C   C ");
+                    harfListesi.Add("C    C");
 
                     break;
                 case 7:
-                    temp.Add("CCCCCCC");
-                    temp.Add("C     C");
-                    temp.Add("CCCCCCC");
-                    temp.Add("C  C   ");
-                    temp.Add("C   C  ");
-                    temp.Add("C    C ");
-                    temp.Add("C     C");
+                    harfListesi.Add("CCCCCCC");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("CCCCCCC");
+                    harfListesi.Add("C  C   ");
+                    harfListesi.Add("C   C  ");
+                    harfListesi.Add("C    C ");
+                    harfListesi.Add("C     C");
 
                     break;
                 default:
@@ -388,63 +355,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-    class class_D : IHarf
+    class class_D : class_List, IHarf
     {
-        List<string> temp;
-        public class_D()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("CC ");
-                    temp.Add("C C");
-                    temp.Add("CC ");
+                    harfListesi.Add("CC ");
+                    harfListesi.Add("C C");
+                    harfListesi.Add("CC ");
                     break;
                 case 4:
 
-                    temp.Add("CCC ");
-                    temp.Add("C  C");
-                    temp.Add("CCC ");
+                    harfListesi.Add("CCC ");
+                    harfListesi.Add("C  C");
+                    harfListesi.Add("CCC ");
 
                     break;
 
                 case 5:
-                    temp.Add("CCCC ");
-                    temp.Add("C   C");
-                    temp.Add("C   C");
-                    temp.Add("C   C");
-                    temp.Add("CCCC ");
+                    harfListesi.Add("CCCC ");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("C   C");
+                    harfListesi.Add("CCCC ");
 
                     break;
                 case 6:
-                    temp.Add("CCCCC ");
-                    temp.Add("C    C");
-                    temp.Add("C    C");
-                    temp.Add("C    C");
-                    temp.Add("CCCCC ");
+                    harfListesi.Add("CCCCC ");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("C    C");
+                    harfListesi.Add("CCCCC ");
 
                     break;
                 case 7:
-                    temp.Add("CCCCCC ");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("C     C");
-                    temp.Add("CCCCCC ");
+                    harfListesi.Add("CCCCCC ");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("C     C");
+                    harfListesi.Add("CCCCCC ");
 
                     break;
                 default:
@@ -452,63 +412,56 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
-    class class_Bosluk : IHarf
+    class class_Bosluk : class_List, IHarf
     {
-        List<string> temp;
-        public class_Bosluk()
-        {
-            temp = new List<string>();
-        }
         public List<string> getHarfler(int boyut)
         {
-            if (boyut < 3 || boyut > 7)
-            {
-                return null;
-            }
-            temp.Clear();
+            if (GetBoyutYanlisMi(boyut)) { return null; }
+
+            harfListesi.Clear();
             switch (boyut)
             {
                 case 3:
-                    temp.Add("   ");
-                    temp.Add("   ");
-                    temp.Add("   ");
+                    harfListesi.Add("   ");
+                    harfListesi.Add("   ");
+                    harfListesi.Add("   ");
                     break;
                 case 4:
 
-                    temp.Add("    ");
-                    temp.Add("    ");
-                    temp.Add("    ");
+                    harfListesi.Add("    ");
+                    harfListesi.Add("    ");
+                    harfListesi.Add("    ");
 
                     break;
 
                 case 5:
-                    temp.Add("     ");
-                    temp.Add("     ");
-                    temp.Add("     ");
-                    temp.Add("     ");
-                    temp.Add("     ");
+                    harfListesi.Add("     ");
+                    harfListesi.Add("     ");
+                    harfListesi.Add("     ");
+                    harfListesi.Add("     ");
+                    harfListesi.Add("     ");
 
                     break;
                 case 6:
-                    temp.Add("      ");
-                    temp.Add("      ");
-                    temp.Add("      ");
-                    temp.Add("      ");
-                    temp.Add("      ");
+                    harfListesi.Add("      ");
+                    harfListesi.Add("      ");
+                    harfListesi.Add("      ");
+                    harfListesi.Add("      ");
+                    harfListesi.Add("      ");
 
                     break;
                 case 7:
-                    temp.Add("       ");
-                    temp.Add("       ");
-                    temp.Add("       ");
-                    temp.Add("       ");
-                    temp.Add("       ");
-                    temp.Add("       ");
-                    temp.Add("       ");
+                    harfListesi.Add("       ");
+                    harfListesi.Add("       ");
+                    harfListesi.Add("       ");
+                    harfListesi.Add("       ");
+                    harfListesi.Add("       ");
+                    harfListesi.Add("       ");
+                    harfListesi.Add("       ");
 
                     break;
                 default:
@@ -516,7 +469,7 @@ namespace ConsoleHelloWorld
             }
 
 
-            return temp;
+            return harfListesi;
 
         }
     }
