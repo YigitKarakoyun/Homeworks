@@ -1,19 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleHelloWorld
 {
-    class class_Fabric
+    #region IPRINT
+    interface IPrint
     {
+        void printVertical_Harfler(string cumle, int boyut, string karakterler);
+        void printVertical(string cumle, int boyut, char karakter);
+        void printVertical(List<List<string>> tempHarfler);
+        void printHorizontal(string cumle, int boyut, char karakter);
+        void printHorizontal_Harfler(string cumle, int boyut, string karakterler);
+        void printHorizontal(List<List<string>> tempHarfler);
+    }
+    #endregion
+    class class_Fabric:IPrint
+    {
+        
         #region HARF LİSTESİ
-        public List<string> getHarfList(char harf, int boyut, char karakter)
+        public List<string> GetHarfList(char harf, int boyut, char karakter)
         {
-            return getHarfList(harf.ToString(), boyut, karakter);
+            return GetHarfList(harf.ToString(), boyut, karakter);
         }
-        public List<string> getHarfList(string harf, int boyut, char karakter)
+        public List<string> GetHarfList(string harf, int boyut, char karakter)
         {
             switch (harf.ToLower())
             {
@@ -29,14 +38,14 @@ namespace ConsoleHelloWorld
             }
         }
 
-        public List<string> getHarf_Yildiz(string harf, int boyut)
+        public List<string> GetHarf_Yildiz(string harf, int boyut)
         {
-            return getHarfList(harf, boyut, '*');
+            return GetHarfList(harf, boyut, '*');
         }
 
-        public List<string> getHarf_C(string harf, int boyut)
+        public List<string> GetHarf_C(string harf, int boyut)
         {
-            return getHarfList(harf, boyut, 'C');
+            return GetHarfList(harf, boyut, 'C');
         }
         #endregion
 
@@ -48,41 +57,17 @@ namespace ConsoleHelloWorld
 
             for (int i = 0; i < cumle.Length; i++)
             {
-                string harf = cumle[i].ToString();
-                List<string> tempString = getHarfList(harf, boyut, karakterler[i]);
-                tempKelimeler.Add(tempString);
+                tempKelimeler.Add(GetHarfList(cumle[i], boyut, karakterler[i]));
             }
             return tempKelimeler;
         }
-        public List<List<string>> getCumle_Harf(string cumle, int boyut, string karakterler)
+        public List<List<string>> GetCumle_KarakterTek(string cumle, int boyut, char karakter)
         {
             List<List<string>> tempKelimeler = new List<List<string>>();
 
             for (int i = 0; i < cumle.Length; i++)
             {
-                tempKelimeler.Add(getHarfList(cumle[i], boyut, karakterler[i]));
-            }
-
-            return tempKelimeler;
-        }
-        public List<List<string>> GetCumle_Karakter(string cumle, int boyut, char karakter)
-        {
-            List<List<string>> tempKelimeler = new List<List<string>>();
-
-            for (int i = 0; i < cumle.Length; i++)
-            {
-                tempKelimeler.Add(getHarfList(cumle[i], boyut, karakter));
-            }
-
-            return tempKelimeler;
-        }
-        public List<List<string>> GetCumle_Karakter(string cumle, int boyut, string karakterler)
-        {
-            List<List<string>> tempKelimeler = new List<List<string>>();
-
-            for (int i = 0; i < cumle.Length; i++)
-            {
-                tempKelimeler.Add(getHarfList(cumle[i], boyut, karakterler[i]));
+                tempKelimeler.Add(GetHarfList(cumle[i], boyut, karakter));
             }
 
             return tempKelimeler;
@@ -101,7 +86,7 @@ namespace ConsoleHelloWorld
         }
         public void printVertical(string cumle, int boyut, char karakter)
         {
-            List<List<string>> tempHarfler = GetCumle_Karakter(cumle, boyut, karakter);
+            List<List<string>> tempHarfler = GetCumle_KarakterTek(cumle, boyut, karakter);
             printVertical(tempHarfler);
         }
         public void printVertical(List<List<string>> tempHarfler)
@@ -120,7 +105,7 @@ namespace ConsoleHelloWorld
         }
         public void printHorizontal(string cumle, int boyut, char karakter)
         {
-            List<List<string>> tempHarfler = GetCumle_Karakter(cumle, boyut, karakter);
+            List<List<string>> tempHarfler = GetCumle_KarakterTek(cumle, boyut, karakter);
             printHorizontal(tempHarfler);
         }
         public void printHorizontal_Harfler(string cumle, int boyut, string karakterler)

@@ -19,20 +19,24 @@ namespace ConsoleHelloWorld
         static void setHelloWorldYazdirC()
         {
             class_Fabric fabric = new class_Fabric();
+            IPrint print = fabric;
             for (int i = 3; i < 8; i++)
-                fabric.printHorizontal("hello world", i, 'C');
+                print.printHorizontal("hello world", i, 'C');
         }
         static void setHelloWorldYazdirHelloWorld()
         {
             class_Fabric fabric = new class_Fabric();
+            IPrint print = fabric;
             for (int i = 3; i < 8; i++)
-                fabric.printHorizontal_Harfler("hello world", i, "hello world".ToUpper());
+                print.printHorizontal_Harfler("hello world", i, "hello world".ToUpper());
         }
         static void setHelloWorldYazdirHelloWorldVertical()
         {
             class_Fabric fabric = new class_Fabric();
+            IPrint print = fabric;
             for (int i = 3; i < 8; i++)
-                fabric.printVertical_Harfler("hello world", i, "hello world".ToUpper());
+                print.printVertical_Harfler("hello world", i, "hello world".ToUpper());
+         
         }
     }
 }
