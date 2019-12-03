@@ -25,6 +25,12 @@ namespace ConsoleHelloWorld
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
             harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
+
             for (int i = 0; i < harfListesi.Count; i++)
             {
                 harfListesi[i] = harfListesi[i].Replace('*', karakter);
@@ -101,6 +107,12 @@ namespace ConsoleHelloWorld
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
             harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
+
             for (int i = 0; i < harfListesi.Count; i++)
             {
                 harfListesi[i] = harfListesi[i].Replace('*', karakter);
@@ -175,6 +187,12 @@ namespace ConsoleHelloWorld
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
             harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
+
             for (int i = 0; i < harfListesi.Count; i++)
             {
                 harfListesi[i] = harfListesi[i].Replace('*', karakter);
@@ -246,8 +264,14 @@ namespace ConsoleHelloWorld
         public List<string> GetHarfler(int boyut, char karakter)
         {
             if (GetBoyutYanlisMi(boyut)) { return null; }
-
+            
             harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
+
             for (int i = 0; i < harfListesi.Count; i++)
             {
                 harfListesi[i] = harfListesi[i].Replace('*', karakter);
@@ -319,9 +343,14 @@ namespace ConsoleHelloWorld
     {
         public List<string> GetHarfler(int boyut, char karakter)
         {
-            harfListesi = GetHarfler_Yildiz(boyut);
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
+            harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
 
             for (int i = 0; i < harfListesi.Count; i++)
             {
@@ -396,9 +425,14 @@ namespace ConsoleHelloWorld
     {
         public List<string> GetHarfler(int boyut, char karakter)
         {
-            harfListesi = GetHarfler_Yildiz(boyut);
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
+            harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
 
             for (int i = 0; i < harfListesi.Count; i++)
             {
@@ -472,9 +506,14 @@ namespace ConsoleHelloWorld
     {
         public List<string> GetHarfler(int boyut, char karakter)
         {
-            harfListesi = GetHarfler_Yildiz(boyut);
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
+            harfListesi = GetHarfler_Yildiz(boyut);
+
+            if (karakter == '*')
+            {
+                return harfListesi;
+            }
 
             for (int i = 0; i < harfListesi.Count; i++)
             {
@@ -548,22 +587,18 @@ namespace ConsoleHelloWorld
     {
         public List<string> GetHarfler(int boyut, char karakter)
         {
-            harfListesi = GetHarfler_Yildiz(boyut);
             if (GetBoyutYanlisMi(boyut)) { return null; }
 
+            harfListesi = GetHarfler_Yildiz(boyut);
 
-            for (int i = 0; i < harfListesi.Count; i++)
-            {
-                harfListesi[i] = harfListesi[i].Replace('*', karakter);
-
-            }
             return harfListesi;
         }
 
         public List<string> GetHarfler_C(int boyut)
         {
-            return GetHarfler(boyut, 'C');
+            return GetHarfler_Yildiz(boyut);
         }
+
         public List<string> GetHarfler_Yildiz(int boyut)
         {
             if (GetBoyutYanlisMi(boyut)) { return null; }
