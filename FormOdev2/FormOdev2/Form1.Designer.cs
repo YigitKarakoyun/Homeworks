@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblYas = new System.Windows.Forms.Label();
             this.btnShowAllInfo = new System.Windows.Forms.Button();
             this.numCocukSayisi = new System.Windows.Forms.NumericUpDown();
             this.dTPickerDogumTarihi = new System.Windows.Forms.DateTimePicker();
             this.checkBxB = new System.Windows.Forms.CheckBox();
             this.checkBxA2 = new System.Windows.Forms.CheckBox();
             this.radioBtnBayan = new System.Windows.Forms.RadioButton();
-            this.radioBtnErkek = new System.Windows.Forms.RadioButton();
+            this.radioBtnBay = new System.Windows.Forms.RadioButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.btnUploadPhoto = new System.Windows.Forms.Button();
             this.pBoxFotograf = new System.Windows.Forms.PictureBox();
@@ -54,10 +56,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lblYas = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCocukSayisi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFotograf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,7 +74,7 @@
             this.groupBox1.Controls.Add(this.checkBxB);
             this.groupBox1.Controls.Add(this.checkBxA2);
             this.groupBox1.Controls.Add(this.radioBtnBayan);
-            this.groupBox1.Controls.Add(this.radioBtnErkek);
+            this.groupBox1.Controls.Add(this.radioBtnBay);
             this.groupBox1.Controls.Add(this.webBrowser1);
             this.groupBox1.Controls.Add(this.btnUploadPhoto);
             this.groupBox1.Controls.Add(this.pBoxFotograf);
@@ -96,6 +99,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Id Info";
+  
+            // 
+            // lblYas
+            // 
+            this.lblYas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblYas.Location = new System.Drawing.Point(124, 307);
+            this.lblYas.Name = "lblYas";
+            this.lblYas.Size = new System.Drawing.Size(194, 28);
+            this.lblYas.TabIndex = 24;
             // 
             // btnShowAllInfo
             // 
@@ -127,9 +139,8 @@
             this.checkBxB.AutoSize = true;
             this.checkBxB.Location = new System.Drawing.Point(236, 204);
             this.checkBxB.Name = "checkBxB";
-            this.checkBxB.Size = new System.Drawing.Size(40, 32);
+            this.checkBxB.Size = new System.Drawing.Size(15, 14);
             this.checkBxB.TabIndex = 6;
-            this.checkBxB.Text = "B";
             this.checkBxB.UseVisualStyleBackColor = true;
             // 
             // checkBxA2
@@ -137,32 +148,29 @@
             this.checkBxA2.AutoSize = true;
             this.checkBxA2.Location = new System.Drawing.Point(124, 204);
             this.checkBxA2.Name = "checkBxA2";
-            this.checkBxA2.Size = new System.Drawing.Size(49, 32);
+            this.checkBxA2.Size = new System.Drawing.Size(15, 14);
             this.checkBxA2.TabIndex = 5;
-            this.checkBxA2.Text = "A2";
             this.checkBxA2.UseVisualStyleBackColor = true;
             // 
             // radioBtnBayan
             // 
             this.radioBtnBayan.AutoSize = true;
-            this.radioBtnBayan.Location = new System.Drawing.Point(236, 161);
+            this.radioBtnBayan.Location = new System.Drawing.Point(236, 168);
             this.radioBtnBayan.Name = "radioBtnBayan";
-            this.radioBtnBayan.Size = new System.Drawing.Size(66, 32);
+            this.radioBtnBayan.Size = new System.Drawing.Size(14, 13);
             this.radioBtnBayan.TabIndex = 4;
-            this.radioBtnBayan.Text = "Bayan";
             this.radioBtnBayan.UseVisualStyleBackColor = true;
             // 
-            // radioBtnErkek
+            // radioBtnBay
             // 
-            this.radioBtnErkek.AutoSize = true;
-            this.radioBtnErkek.Checked = true;
-            this.radioBtnErkek.Location = new System.Drawing.Point(124, 161);
-            this.radioBtnErkek.Name = "radioBtnErkek";
-            this.radioBtnErkek.Size = new System.Drawing.Size(63, 32);
-            this.radioBtnErkek.TabIndex = 3;
-            this.radioBtnErkek.TabStop = true;
-            this.radioBtnErkek.Text = "Erkek";
-            this.radioBtnErkek.UseVisualStyleBackColor = true;
+            this.radioBtnBay.AutoSize = true;
+            this.radioBtnBay.Checked = true;
+            this.radioBtnBay.Location = new System.Drawing.Point(124, 168);
+            this.radioBtnBay.Name = "radioBtnBay";
+            this.radioBtnBay.Size = new System.Drawing.Size(14, 13);
+            this.radioBtnBay.TabIndex = 3;
+            this.radioBtnBay.TabStop = true;
+            this.radioBtnBay.UseVisualStyleBackColor = true;
             // 
             // webBrowser1
             // 
@@ -324,13 +332,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // lblYas
+            // errorProvider1
             // 
-            this.lblYas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblYas.Location = new System.Drawing.Point(124, 307);
-            this.lblYas.Name = "lblYas";
-            this.lblYas.Size = new System.Drawing.Size(194, 28);
-            this.lblYas.TabIndex = 24;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -346,6 +350,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCocukSayisi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFotograf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,7 +369,7 @@
         private System.Windows.Forms.PictureBox pBoxFotograf;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioBtnBayan;
-        private System.Windows.Forms.RadioButton radioBtnErkek;
+        private System.Windows.Forms.RadioButton radioBtnBay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBxB;
         private System.Windows.Forms.CheckBox checkBxA2;
@@ -379,6 +384,7 @@
         private System.Windows.Forms.Button btnShowAllInfo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label lblYas;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
