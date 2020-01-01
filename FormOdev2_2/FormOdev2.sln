@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormOdev2", "FormOdev2\FormOdev2.csproj", "{865A6618-3B90-4639-8507-E99A253835D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{865A6618-3B90-4639-8507-E99A253835D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865A6618-3B90-4639-8507-E99A253835D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865A6618-3B90-4639-8507-E99A253835D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865A6618-3B90-4639-8507-E99A253835D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15FFE816-4335-4219-945A-4D08C4DCBCC4}
+	EndGlobalSection
+EndGlobal
