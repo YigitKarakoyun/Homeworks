@@ -170,6 +170,7 @@ namespace FormOdev2
             insan.CocukSayisi = cocukSayisi;
             insan.WebAdresi = txtWebAdresi.Text;
             insan.TC = txt_tc;
+            insan.Fotograf = pBoxFotograf.BackgroundImage;
 
             Insan_Yazdirma insan_yazdirma = new Insan_Yazdirma();
             insan_yazdirma.Print_String(insan);
