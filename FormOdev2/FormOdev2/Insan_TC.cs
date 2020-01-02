@@ -1,6 +1,6 @@
 ﻿namespace FormOdev2
 {
-    public class Info_TC
+    public class Insan_TC
     {
         private string _TC;
         public string TC

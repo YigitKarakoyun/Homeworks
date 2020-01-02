@@ -117,7 +117,7 @@
             this.btnShowAllInfo.TabIndex = 11;
             this.btnShowAllInfo.Text = "Show All Info";
             this.btnShowAllInfo.UseVisualStyleBackColor = true;
-            this.btnShowAllInfo.Click += new System.EventHandler(this.btnShowAllInfo_Click);
+            this.btnShowAllInfo.Click += new System.EventHandler(this.btnShowAllInsan_Click);
             // 
             // numCocukSayisi
             // 

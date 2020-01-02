@@ -1,6 +1,6 @@
 ﻿namespace FormOdev2
 {
-    public class Info_Cinsiyet
+    public class Insan_Cinsiyet
     {
         private string _Cinsiyet;
         public string Cinsiyet

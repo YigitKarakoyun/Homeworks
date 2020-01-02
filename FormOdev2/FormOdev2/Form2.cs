@@ -5,8 +5,8 @@ namespace FormOdev2
 {
     public partial class Form2 : Form
     {
-        Info info;
-        public Form2(Info info)
+        Insan info;
+        public Form2(Insan info)
         {
             InitializeComponent();
             this.info = info;

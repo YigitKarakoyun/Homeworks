@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormOdev2
 {
-    public class Info_WebAdresi
+    public class Insan_WebAdresi
     {
         private string _Adres;
 

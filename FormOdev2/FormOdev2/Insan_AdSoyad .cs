@@ -2,7 +2,7 @@
 
 namespace FormOdev2
 {
-    public class Info_AdSoyad
+    public class Insan_AdSoyad
     {
         private string _AdSoyad;
         public string AdSoyad

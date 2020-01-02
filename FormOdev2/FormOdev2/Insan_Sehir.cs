@@ -1,6 +1,6 @@
 ﻿namespace FormOdev2
 {
-    public class Info_Sehir
+    public class Insan_Sehir
     {
         private string _SehirAdi;
         public string SehirAdi {

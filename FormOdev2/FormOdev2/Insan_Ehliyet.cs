@@ -1,6 +1,6 @@
 ﻿namespace FormOdev2
 {
-    public class Info_Ehliyet
+    public class Insan_Ehliyet
     {
         private string _Ehliyet;
 

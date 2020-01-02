@@ -11,41 +11,41 @@ namespace FormOdev2
         {
             InitializeComponent();
         }
-        Info_Ehliyet[] info_ehliyetler =
+        Insan_Ehliyet[] insan_ehliyetler =
         {
-            new Info_Ehliyet(){ Ehliyet = "A2" },
-            new Info_Ehliyet(){ Ehliyet = "B" },
+            new Insan_Ehliyet(){ Ehliyet = "A2" },
+            new Insan_Ehliyet(){ Ehliyet = "B" },
         };
-        Info_Cinsiyet[] info_cinsiyetler =
+        Insan_Cinsiyet[] insan_cinsiyetler =
         {
-            new Info_Cinsiyet(){ Cinsiyet = "Bay" },
-            new Info_Cinsiyet(){ Cinsiyet = "Bayan" },
+            new Insan_Cinsiyet(){ Cinsiyet = "Bay" },
+            new Insan_Cinsiyet(){ Cinsiyet = "Bayan" },
         };
-        Info_Sehir[] info_sehirler = {
-            new Info_Sehir() { SehirAdi = "Izmir", Aciklama = "" },
-            new Info_Sehir() { SehirAdi = "Manisa", Aciklama = "" },
-            new Info_Sehir() { SehirAdi = "Erzurum", Aciklama = "" },
-            new Info_Sehir() { SehirAdi = "Bitlis", Aciklama = "" },
-            new Info_Sehir() { SehirAdi = "Trabzon", Aciklama = "" },
-            new Info_Sehir() { SehirAdi = "Usak", Aciklama = "" },
+        Insan_Sehir[] insan_sehirler = {
+            new Insan_Sehir() { SehirAdi = "Izmir", Aciklama = "" },
+            new Insan_Sehir() { SehirAdi = "Manisa", Aciklama = "" },
+            new Insan_Sehir() { SehirAdi = "Erzurum", Aciklama = "" },
+            new Insan_Sehir() { SehirAdi = "Bitlis", Aciklama = "" },
+            new Insan_Sehir() { SehirAdi = "Trabzon", Aciklama = "" },
+            new Insan_Sehir() { SehirAdi = "Usak", Aciklama = "" },
         };
         
         private void Form1_Load(object sender, EventArgs e)
         {
             //Şehirleri Doldurur
             cBoxSehir.DataSource = null;
-            cBoxSehir.DataSource = info_sehirler;
+            cBoxSehir.DataSource = insan_sehirler;
 
             //Cinsiyetleri Tanımlama
-            radioBtnBay.Tag = info_cinsiyetler[0];
-            radioBtnBayan.Tag = info_cinsiyetler[1];
+            radioBtnBay.Tag = insan_cinsiyetler[0];
+            radioBtnBayan.Tag = insan_cinsiyetler[1];
 
             radioBtnBay.Text = radioBtnBay.Tag.ToString();
             radioBtnBayan.Text = radioBtnBayan.Tag.ToString();
 
             //Ehliyetleri Tanımlama
-            checkBxA2.Tag = info_ehliyetler[0];
-            checkBxB.Tag = info_ehliyetler[1];
+            checkBxA2.Tag = insan_ehliyetler[0];
+            checkBxB.Tag = insan_ehliyetler[1];
 
             checkBxA2.Text = checkBxA2.Tag.ToString();
             checkBxB.Text = checkBxB.Tag.ToString();
@@ -93,19 +93,19 @@ namespace FormOdev2
         }
 
 
-        Info_AdSoyad info_AdSoyad = new Info_AdSoyad();
-        Info_Sehir info_Sehir = new Info_Sehir();
-        Info_TC info_TC = new Info_TC();
-        Info_Cinsiyet info_Cinsiyet = new Info_Cinsiyet();
-        Info_CocukSayisi info_CocukSayisi = new Info_CocukSayisi();
-        List<Info_Ehliyet> info_Ehliyetler = new List<Info_Ehliyet>();
-        Info_WebAdresi info_WebAdresi = new Info_WebAdresi();
-        private void btnShowAllInfo_Click(object sender, EventArgs e)
+        Insan_AdSoyad insan_AdSoyad = new Insan_AdSoyad();
+        Insan_Sehir insan_Sehir = new Insan_Sehir();
+        Insan_TC insan_TC = new Insan_TC();
+        Insan_Cinsiyet insan_Cinsiyet = new Insan_Cinsiyet();
+        Insan_CocukSayisi insan_CocukSayisi = new Insan_CocukSayisi();
+        List<Insan_Ehliyet> insan_Ehliyetler = new List<Insan_Ehliyet>();
+        Insan_WebAdresi insan_WebAdresi = new Insan_WebAdresi();
+        private void btnShowAllInsan_Click(object sender, EventArgs e)
         {
 
             //AD SOYAD KONTROLÜ YAPAR
-            info_AdSoyad.AdSoyad = txtAdSoyad.Text;
-            if (info_AdSoyad.AdSoyad ==string.Empty)
+            insan_AdSoyad.AdSoyad = txtAdSoyad.Text;
+            if (insan_AdSoyad.AdSoyad ==string.Empty)
             {
                 MessageBox.Show("Ad Soyad Giriniz");
                 return;
@@ -118,25 +118,25 @@ namespace FormOdev2
                 MessageBox.Show("Şehir Seçiniz");
                 return;
             }
-            info_Sehir.SehirAdi = sehirItem.ToString();
+            insan_Sehir.SehirAdi = sehirItem.ToString();
         
             //ÇOCUK SAYISI KONTROLÜ YAPAR
-            info_CocukSayisi.CocukSayisi = (int)numCocukSayisi.Value;
-            if (info_CocukSayisi.CocukSayisi<0)
+            insan_CocukSayisi.CocukSayisi = (int)numCocukSayisi.Value;
+            if (insan_CocukSayisi.CocukSayisi<0)
             {
                 MessageBox.Show("Çocuk Sayısı 0 dan Küçük Olamaz");
                 return;
             }
 
             //TC 11 HANELİ KONTROLÜ YAPAR
-            string tcText = info_TC.Get_DogruString(txtTCNo.Text);
+            string tcText = insan_TC.Get_DogruString(txtTCNo.Text);
             int tcLen = tcText.Length;
             if (tcLen != 11)
             {
                 errorProvider1.SetError(txtTCNo,"11 Haneli TC No Giriniz");
                 return;
             }
-            info_TC.TC = tcText;
+            insan_TC.TC = tcText;
 
             //TC NO DOĞRUYSA ERROR PROVIDER SILER
             errorProvider1.SetError(txtTCNo, "");
@@ -144,27 +144,27 @@ namespace FormOdev2
             //CİNSİYET BELİRLER
             if (radioBtnBay.Checked)
             {
-                info_Cinsiyet = (Info_Cinsiyet)radioBtnBay.Tag;
+                insan_Cinsiyet = (Insan_Cinsiyet)radioBtnBay.Tag;
             }
             else
             {
-                info_Cinsiyet = (Info_Cinsiyet)radioBtnBayan.Tag;
+                insan_Cinsiyet = (Insan_Cinsiyet)radioBtnBayan.Tag;
             }
 
             //EHLİYETLERİ EKLER
-            info_Ehliyetler.Clear();
+            insan_Ehliyetler.Clear();
             if (checkBxA2.Checked)
             {
-                info_Ehliyetler.Add((Info_Ehliyet)checkBxA2.Tag);
+                insan_Ehliyetler.Add((Insan_Ehliyet)checkBxA2.Tag);
             }
             if (checkBxB.Checked)
             {
-                info_Ehliyetler.Add((Info_Ehliyet)checkBxB.Tag);
+                insan_Ehliyetler.Add((Insan_Ehliyet)checkBxB.Tag);
             }
 
             //WEB ADRESİ
-            info_WebAdresi.Adres = txtWebAdresi.Text;
-            if (info_WebAdresi.Adres == string.Empty)
+            insan_WebAdresi.Adres = txtWebAdresi.Text;
+            if (insan_WebAdresi.Adres == string.Empty)
             {
                 txtWebAdresi.Text = "";
                 //MessageBox.Show("Web adresleri www ile başlar");
@@ -172,17 +172,17 @@ namespace FormOdev2
             }
 
             //Yazdırma
-            Info info = new Info();
-            info.AdSoyad = info_AdSoyad;
-            info.Cinsiyet = info_Cinsiyet;
-            info.CocukSayisi = info_CocukSayisi;
-            info.Ehliyetler = info_Ehliyetler;
-            info.WebAdresi = info_WebAdresi;
-            info.TC = info_TC;
-            info.Sehir = info_Sehir;
-            info.printMbox();
+            Insan insan = new Insan();
+            insan.AdSoyad = insan_AdSoyad;
+            insan.Cinsiyet = insan_Cinsiyet;
+            insan.CocukSayisi = insan_CocukSayisi;
+            insan.Ehliyetler = insan_Ehliyetler;
+            insan.WebAdresi = insan_WebAdresi;
+            insan.TC = insan_TC;
+            insan.Sehir = insan_Sehir;
+            insan.printMbox();
 
-            Form2 frm2 = new Form2(info);
+            Form2 frm2 = new Form2(insan);
             frm2.ShowDialog();
             
         }

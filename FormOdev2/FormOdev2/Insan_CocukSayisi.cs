@@ -1,6 +1,6 @@
 ﻿namespace FormOdev2
 {
-    public class Info_CocukSayisi
+    public class Insan_CocukSayisi
     {
         private int _CocukSayisi;
         public int CocukSayisi
@@ -12,7 +12,6 @@
                 {
                     _CocukSayisi = value;
                 }
-
             }
         }
         public override string ToString()
