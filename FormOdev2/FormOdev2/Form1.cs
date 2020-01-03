@@ -181,6 +181,7 @@ namespace FormOdev2
             insan.TC = insan_TC;
             insan.Sehir = insan_Sehir;
             insan.printMbox();
+            insan.Photo = pBoxFotograf.BackgroundImage;
 
             Form2 frm2 = new Form2(insan);
             frm2.ShowDialog();
