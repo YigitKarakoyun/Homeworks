@@ -18,16 +18,15 @@ namespace OdevPersoneleGorevAta
             InitializeComponent();
             this.employee = employee;
         }
-
-        private void FormEmployeeTasks_Load(object sender, EventArgs e)
+        private void ShowMe()
         {
-            if (employee!=null)
+            if (employee != null)
             {
                 listView1.Items.Clear();
 
-                label1.Text = employee.Employee_FirstName+" "+ employee.Employee_LastName;
+                label1.Text = employee.Employee_FirstName + " " + employee.Employee_LastName;
 
-                if (employee.Employee_TaskList!=null)
+                if (employee.Employee_TaskList != null)
                 {
                     foreach (Task task in employee.Employee_TaskList)
                     {
@@ -39,13 +38,40 @@ namespace OdevPersoneleGorevAta
                         item.Tag = task;
                         listView1.Items.Add(item);
                     }
-                    
+
                 }
             }
         }
-
+        private void FormEmployeeTasks_Load(object sender, EventArgs e)
+        {
+            ShowMe();
+        }
+        DeleteTask DeleteTask_db = new DeleteTask();
         private void btnSil_Click(object sender, EventArgs e)
         {
+            if (employee!=null)
+            {
+                var selectedtask = listView1.FocusedItem;
+                if (selectedtask == null)
+                {
+                    MessageBox.Show("Önce Silinecek Görevi Seçmelisiniz");
+                    return;
+
+                }
+
+                Task task = (Task)selectedtask.Tag;
+                employee.Employee_TaskList.Remove(task);
+
+                int deletedCount = DeleteTask_db.Get_DeletedTrue_And_DeleteTask(task.Task_Id);
+                if (deletedCount > 0)
+                {
+                    //ShowMe();
+                    DialogResult = DialogResult.OK;
+                    MessageBox.Show("Görev Silindi");
+                }
+            }
+            
+
 
         }
     }

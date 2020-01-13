@@ -91,5 +91,14 @@ namespace OdevPersoneleGorevAta.Properties {
                 return ((string)(this["Command_SelectTask"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Update EmployeeTasks  Set EmployeeTasks_Visible = 0 Where EmployeeTasks_TaskId=")]
+        public string Command_DeleteTask {
+            get {
+                return ((string)(this["Command_DeleteTask"]));
+            }
+        }
     }
 }

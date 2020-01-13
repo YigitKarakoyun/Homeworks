@@ -27,6 +27,14 @@ namespace OdevPersoneleGorevAta
             _SqlCommand_Select_EmployeeTask.CommandText = _SqlCommand_Select_EmployeeTask_string + EmployeeID + ")";
             return _SqlCommand_Select_EmployeeTask;
         }
+
+        private static SqlCommand _SqlCommand_Delete_Task { get; } = GetCommand(NorthWind_Connection.Connection);
+        private static string _SqlCommand_Delete_Task_string { get; } = Properties.Settings.Default.Command_DeleteTask;
+        public static SqlCommand SqlCommand_Delete_Task(int TaskID)
+        {
+            _SqlCommand_Delete_Task.CommandText = _SqlCommand_Delete_Task_string + TaskID;
+            return _SqlCommand_Delete_Task;
+        }
         #endregion
 
     }

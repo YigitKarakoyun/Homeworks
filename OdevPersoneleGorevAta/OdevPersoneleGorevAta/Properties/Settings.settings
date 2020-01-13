@@ -31,5 +31,8 @@
 
 </Value>
     </Setting>
+    <Setting Name="Command_DeleteTask" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Update EmployeeTasks  Set EmployeeTasks_Visible = 0 Where EmployeeTasks_TaskId=</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
