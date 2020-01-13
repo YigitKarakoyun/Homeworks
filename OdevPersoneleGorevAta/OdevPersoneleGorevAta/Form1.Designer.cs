@@ -117,6 +117,7 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personel Detail";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblTelefon
             // 
@@ -233,11 +234,13 @@
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(655, 438);
             this.Controls.Add(this.btnGorevleriGoster);
             this.Controls.Add(this.btnGorevAta);

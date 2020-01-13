@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace OdevPersoneleGorevAta
@@ -10,79 +10,14 @@ namespace OdevPersoneleGorevAta
         {
             InitializeComponent();
         }
+        SelectEmployee employee_selectdb = new SelectEmployee();
+        List<Employee> employeeList;
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            //SQL BAĞLANTISI
-            SqlConnection con = NorthWind_Connection.Get_Connection();
+            //EMPLOYEES VERİLERİNİ ÇEK
+            employeeList = employee_selectdb.Get_EmployeeList_And_FillListView(listView1);
 
-            //SQL KOMUTU
-            SqlCommand com = Northwind_Command.GetCommand(con,Properties.Settings.Default.Command_SelectEmployee);
-
-            try
-            {
-                con.Open();
-                SqlDataReader dr = com.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        //PERSONEL VERİLERİ ÇEKER
-                        int employee_Id = Convert.ToInt32(dr["EmployeeID"]);
-                        string FirstName = dr["FirstName"].ToString();
-                        string LastName = dr["LastName"].ToString();
-                        string Title = dr["Title"].ToString();
-                        DateTime BirthDate = Convert.ToDateTime(dr["BirthDate"]);
-                        string Country = dr["Country"].ToString();
-
-                        //PERSONEL DETAILS VERİLERİ ÇEKER
-                        DateTime HireDate = Convert.ToDateTime(dr["HireDate"]);
-                        string Address = dr["Address"].ToString();
-                        string Notes = dr["Notes"].ToString();
-                        string HomePhone = dr["HomePhone"].ToString();
-
-                        //PERSONEL OLUŞTURUP & DOLDURMA
-                        Employee employee = new Employee();
-                        employee.Employee_Id = employee_Id;
-                        employee.Employee_FirstName = FirstName;
-                        employee.Employee_LastName = LastName;
-                        employee.Employee_Title = Title;
-                        employee.Employee_BirthDate = BirthDate;
-                        employee.Employee_Country = Country;
-
-                        //PERSONEL İÇİNDEKİ DETAİLS DOLDURMA
-                        employee.EmployeeDetails.Employee_Adress = Address;
-                        employee.EmployeeDetails.Employee_HireDate = HireDate;
-                        employee.EmployeeDetails.Employee_Notes = Notes;
-                        employee.EmployeeDetails.Employee_HomePhone = HomePhone;
-
-                        
-
-                        //LİSTVİEWITEM OLUŞTURUP & DOLDURMA
-                        ListViewItem li = new ListViewItem();
-                        li.Text = FirstName;
-                        li.SubItems.Add(LastName);
-                        li.SubItems.Add(Title);
-                        li.SubItems.Add(BirthDate.ToString());
-                        li.SubItems.Add(Country);
-                        li.Tag = employee;
-
-                        //LİSTVİEW E ITEM EKLEME
-                        listView1.Items.Add(li);
-
-                    }
-                
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            if (con.State == System.Data.ConnectionState.Open)
-            {
-                con.Close();
-            }
-            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,10 +58,8 @@ namespace OdevPersoneleGorevAta
             frm.ShowDialog();
         }
 
-        private void btnYeniGorevOIustur_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            //FormYeniGorev formYeniGorev = new FormYeniGorev();
-            //formYeniGorev.ShowDialog();
 
         }
     }

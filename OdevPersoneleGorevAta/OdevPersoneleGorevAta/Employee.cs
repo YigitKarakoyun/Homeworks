@@ -12,6 +12,6 @@ namespace OdevPersoneleGorevAta
         public DateTime Employee_BirthDate { get; internal set; }
         public string Employee_Country { get; set; }
         public EmployeeDetail EmployeeDetails { get; set; } = new EmployeeDetail();
-        public List<Task> Employee_Tasks { get; set; } = new List<Task>();
+        public List<Task> Employee_TaskList { get; set; } = new List<Task>();
     }
 }

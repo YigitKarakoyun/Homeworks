@@ -62,7 +62,7 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnKaydet.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnKaydet.FlatAppearance.BorderSize = 0;
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaydet.Image = global::OdevPersoneleGorevAta.Properties.Resources.save;
@@ -125,10 +125,11 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Görev Adi:";
             // 
-            // FormEmployeeTask
+            // FormNewTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(382, 223);
             this.Controls.Add(this.txtGorevAdi);
             this.Controls.Add(this.txtGorevAciklamasi);
@@ -139,7 +140,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FormEmployeeTask";
+            this.Name = "FormNewTask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTask";
             this.Load += new System.EventHandler(this.FormEmployeeTask_Load);

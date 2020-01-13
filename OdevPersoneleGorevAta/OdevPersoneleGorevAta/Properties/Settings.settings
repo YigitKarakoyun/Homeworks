@@ -22,7 +22,12 @@
       <Value Profile="(Default)">insert into EmployeeTasks(EmployeeTasks_EmployeeId,EmployeeTasks_TaskId) Values(@EmployeeTasks_EmployeeId,@EmployeeTasks_TaskId)</Value>
     </Setting>
     <Setting Name="Command_SelectEmployeeTask" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">select t.* from Tasks t where TaskId in (select EmployeeTasks_TaskId from EmployeeTasks where EmployeeTasks_EmployeeId=
+      <Value Profile="(Default)">select t.* from Tasks t where TaskId in (select EmployeeTasks_TaskId from EmployeeTasks where EmployeeTasks_Visible=1 And EmployeeTasks_EmployeeId=
+
+</Value>
+    </Setting>
+    <Setting Name="Command_SelectTask" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select * from Tasks where Tasks_Visible=1
 
 </Value>
     </Setting>

@@ -66,10 +66,14 @@
     <Compile Include="FormEmployeeTasks.Designer.cs">
       <DependentUpon>FormEmployeeTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertEmployeeTasks.cs" />
+    <Compile Include="InsertTask.cs" />
     <Compile Include="Northwind_Command.cs" />
     <Compile Include="NorthWind_Connection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectEmployee.cs" />
+    <Compile Include="SelectTasks.cs" />
     <Compile Include="Task.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

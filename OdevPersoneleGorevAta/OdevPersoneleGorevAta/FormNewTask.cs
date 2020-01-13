@@ -6,6 +6,21 @@ namespace OdevPersoneleGorevAta
 {
     public partial class FormNewTask : Form
     {
+        #region FORM LOAD
+        private void FormEmployeeTask_Load(object sender, EventArgs e)
+        {
+            con = NorthWind_Connection.Connection;
+            com = Northwind_Command.SqlCommand_InsertTask;
+        }
+        #endregion
+
+        SqlConnection con;
+        SqlCommand com;
+
+        InsertTask insert_Task_db = new InsertTask();
+        InsertEmployeeTasks insert_EmployeeTasks_db = new InsertEmployeeTasks();
+
+
         #region ÇALIŞANA GÖREV ATAMASI
         Employee employee;
         public FormNewTask(Employee employee)
@@ -20,33 +35,7 @@ namespace OdevPersoneleGorevAta
         }
         #endregion
 
-
-        Task task;
-        public FormNewTask(Task task)
-        {
-            InitializeComponent();
-            this.task = task;
-
-        }
-        /*private void FormYeniGorev_Load(object sender, EventArgs e)
-        {
-
-            datePickerGorevTarihi.Value = DateTime.Now;
-            if (task == null)
-            {
-                Text = "Yeni Görev";
-                btnKaydet.Text = "Kaydet";
-            }
-            else
-            {
-                Text = "Görev Güncelleme";
-                btnKaydet.Text = "Güncelle";
-                txtGorevAdi.Text = task.Task_Name;
-                txtGorevAciklamasi.Text = task.Task_Description;
-                //datePickerGorevTarihi.Value = task.GorevTarihi;
-
-            }
-        }*/
+        
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -57,117 +46,31 @@ namespace OdevPersoneleGorevAta
 
             if (employee!=null)
             {
+
                 //TASK KAYDETME
-                SqlConnection con = NorthWind_Connection.Get_Connection();
-                SqlCommand com = Northwind_Command.GetCommand(con, Properties.Settings.Default.Command_InsertTask);
-                com.Parameters.AddWithValue("@TaskName", task_Name);
-                com.Parameters.AddWithValue("@TaskDescription", task_Description);
-                com.Parameters.AddWithValue("@TaskDateTime", task_DateTime);
+                int taskid = insert_Task_db.Get_TaskID_And_InsertTask(task_Name, task_Description, task_DateTime);
+                Task task = new Task() { Task_Id = taskid, Task_Name = task_Name, Task_Date = task_DateTime, Task_Description = task_Description };
+                employee.Employee_TaskList.Add(task);
 
-                try
+                //EMPLOYEE TASK KAYITLANMASI
+                bool insert_true = insert_EmployeeTasks_db.Get_InsertedTrue_And_Insert_EmployeeId_And_TaskId(employee.Employee_Id,taskid);
+                Temizlik();
+                if (insert_true)
                 {
-                    con.Open();
-
-                    //TASK IDSINI ÖĞRENME
-                    string id_String = com.ExecuteScalar().ToString();
-                    int id = Convert.ToInt32(id_String);
-                    
-                    //EMPLOYEE TASK EKLEME
-                    Task task = new Task() {Task_Id = id , Task_Name = task_Name, Task_Date= task_DateTime, Task_Description = task_Description };
-                    if (employee.Employee_Tasks==null)
-                    {
-                        employee.Employee_Tasks = new System.Collections.Generic.List<Task>();
-                    }
-                    employee.Employee_Tasks.Add(task);
-
-                    //EMPLOYEE TASK KAYITLANMASI
-                    
-
                     //KAYIT TAMAMLANDI MESAJI
-                    Temizlik();
                     MessageBox.Show("Kaydınız Başarılı İle Tamamlanmıştır.");
                     DialogResult = DialogResult.OK;
-                    
                 }
-                catch (Exception ex)
-                {
-                    lblHataMesaji.Text = ex.Message;
 
-                    MessageBox.Show(ex.Message);
-                }
+                
+                
+                
+
             }
 
 
-            ////SQL BAĞLANTISI
-            //SqlConnection con = new SqlConnection();
-            //con.ConnectionString = Properties.Settings.Default.Connection_NorthWind;
-
-                ////SQL KOMUTU
-                //SqlCommand com = new SqlCommand();
-                //com.Connection = con;
-
-                //if (task == null)
-                //{
-                //    com.CommandText = Properties.Settings.Default.Command_InsertTask;
-                //    com.Parameters.AddWithValue("@TaskName", GorevAdi);
-                //    com.Parameters.AddWithValue("@TaskDescription", GorevAciklamasi);
-                //    com.Parameters.AddWithValue("@TaskDateTime", GorevDateTime);
-
-
-                //    try
-                //    {
-                //        con.Open();
-                //        int adet = com.ExecuteNonQuery();
-                //        if (adet > 0)
-                //        {
-                //            Temizlik();
-                //            MessageBox.Show("Kaydınız Başarılı İle Tamamlanmıştır.");
-                //            DialogResult = DialogResult.OK;
-                //        }
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        lblHataMesaji.Text = ex.Message;
-
-                //        MessageBox.Show(ex.Message);
-                //    }
-
-                //}
-                //else
-                //{
-                //    com.CommandText = Properties.Settings.Default.Command_UpdateTask + task.Task_Id;
-                //    com.Parameters.AddWithValue("@TaskName", GorevAdi);
-                //    com.Parameters.AddWithValue("@TaskDescription", GorevAciklamasi);
-                //    com.Parameters.AddWithValue("@TaskDateTime", GorevDateTime);
-                //    try
-                //    {
-                //        con.Open();
-                //        int etkilenenKayit = com.ExecuteNonQuery();
-                //        if (etkilenenKayit > 0)
-                //        {
-                //            Temizlik();
-
-                //            MessageBox.Show("Kaydınız Güncellenmiştir");
-                //            DialogResult = DialogResult.OK;
-                //            Close();
-
-                //        }
-
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        lblHataMesaji.Text = ex.Message;
-                //        MessageBox.Show(ex.Message);
-                //    }
-
-
-
-                //}
-                //if (con.State == System.Data.ConnectionState.Open)
-                //{
-                //    con.Close();
-                //}
-            }
+            
+        }
 
         private void Temizlik()
         {
@@ -183,9 +86,6 @@ namespace OdevPersoneleGorevAta
             }
         }
 
-        private void FormEmployeeTask_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

@@ -76,10 +76,19 @@ namespace OdevPersoneleGorevAta.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("select t.* from Tasks t where TaskId in (select EmployeeTasks_TaskId from Employe" +
-            "eTasks where EmployeeTasks_EmployeeId=\r\n\r\n")]
+            "eTasks where EmployeeTasks_Visible=1 And EmployeeTasks_EmployeeId=\r\n\r\n")]
         public string Command_SelectEmployeeTask {
             get {
                 return ((string)(this["Command_SelectEmployeeTask"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("select * from Tasks where Tasks_Visible=1\r\n\r\n")]
+        public string Command_SelectTask {
+            get {
+                return ((string)(this["Command_SelectTask"]));
             }
         }
     }

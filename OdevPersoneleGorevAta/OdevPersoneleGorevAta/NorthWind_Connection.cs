@@ -10,15 +10,18 @@ namespace OdevPersoneleGorevAta
     class NorthWind_Connection
     {
         private static SqlConnection connection { get; set; }
-        public static SqlConnection Get_Connection()
+        public static SqlConnection Connection
         {
-            if (connection==null)
-            {
-                connection =  new SqlConnection();
-                connection.ConnectionString = Properties.Settings.Default.Connection_NorthWind;
-            }
+            get{
+                if (connection == null)
+                {
+                    connection = new SqlConnection();
+                    connection.ConnectionString = Properties.Settings.Default.Connection_NorthWind;
+                }
 
-            return connection;
+                return connection;
+            }
+            
         }
     }
 }
