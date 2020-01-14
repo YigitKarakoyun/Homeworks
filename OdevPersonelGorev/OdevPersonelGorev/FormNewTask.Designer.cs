@@ -65,6 +65,7 @@
             this.btnKaydet.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnKaydet.FlatAppearance.BorderSize = 0;
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaydet.Image = global::OdevPersonelGorev.Properties.Resources.save_32px;
             this.btnKaydet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKaydet.Location = new System.Drawing.Point(118, 95);
             this.btnKaydet.Name = "btnKaydet";

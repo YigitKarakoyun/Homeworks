@@ -95,6 +95,7 @@
             this.btnSil.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnSil.FlatAppearance.BorderSize = 0;
             this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Image = global::OdevPersonelGorev.Properties.Resources.delete_32px;
             this.btnSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSil.Location = new System.Drawing.Point(524, 269);
             this.btnSil.Name = "btnSil";
@@ -109,6 +110,7 @@
             this.btnGuncelle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGuncelle.FlatAppearance.BorderSize = 0;
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncelle.Image = global::OdevPersonelGorev.Properties.Resources.refresh_32px;
             this.btnGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuncelle.Location = new System.Drawing.Point(388, 269);
             this.btnGuncelle.Name = "btnGuncelle";

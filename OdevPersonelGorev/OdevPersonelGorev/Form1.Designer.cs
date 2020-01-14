@@ -181,6 +181,7 @@
             this.btnGorevAta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGorevAta.FlatAppearance.BorderSize = 0;
             this.btnGorevAta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGorevAta.Image = global::OdevPersonelGorev.Properties.Resources.icons8_identification_documents_32;
             this.btnGorevAta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGorevAta.Location = new System.Drawing.Point(275, 390);
             this.btnGorevAta.Name = "btnGorevAta";
@@ -224,6 +225,7 @@
             this.btnGorevleriGoster.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnGorevleriGoster.FlatAppearance.BorderSize = 0;
             this.btnGorevleriGoster.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGorevleriGoster.Image = global::OdevPersonelGorev.Properties.Resources.bulleted_list_32px;
             this.btnGorevleriGoster.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGorevleriGoster.Location = new System.Drawing.Point(471, 390);
             this.btnGorevleriGoster.Name = "btnGorevleriGoster";

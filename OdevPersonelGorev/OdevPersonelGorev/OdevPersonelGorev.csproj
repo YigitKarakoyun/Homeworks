@@ -90,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +104,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\bulleted_list_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-identification-documents-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\plus_math_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\refresh_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\save_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
