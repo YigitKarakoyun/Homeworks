@@ -5,20 +5,19 @@ using System.Windows.Forms;
 
 namespace OdevPersoneleGorevAta
 {
-    class SelectEmployee
+    class Db_Employee
     {
         //SQL BAĞLANTISI
         public SqlConnection con { get; private set; }
 
         //SQL KOMUTU
-        public SqlCommand com_select_employee { get; private set; }
-        public SelectTasks tasks_db { get; set; } = new SelectTasks();
-        public SelectEmployee()
+        public Db_EmployeeTasks tasks_db { get; set; } = new Db_EmployeeTasks();
+        public Db_Employee()
         {
             this.con = NorthWind_Connection.Connection;
-            this.com_select_employee = Northwind_Command.GetCommand(con, Properties.Settings.Default.Command_SelectEmployee);
+            
         }
-
+        #region BAĞLANTI AÇMA KAPAMA
         //BAĞLANTI KAPAMA
         private void CloseConnection()
         {
@@ -36,54 +35,26 @@ namespace OdevPersoneleGorevAta
                 con.Open();
             }
         }
+        #endregion
 
-        //SQLDATA READER OKUMA(---ÇALIŞMASI İÇİN SQLCONNECTİON AÇIK BIRAKTIM---)
-        public SqlDataReader Get_SqlDataReader_And_SelectEmployees()
-        {
-            if (con.State != System.Data.ConnectionState.Open)
-            {
-                con.Open();
-            }
-            SqlDataReader dr = null;
 
-            try
-            {
-                dr = com_select_employee.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-            
-            return dr;
-        }
-        //SQLDATA READER OKUMA(---ÇALIŞMASI İÇİN SQLCONNECTİON AÇIK BIRAKTIM---)
-        public SqlDataReader Get_SqlDataReader_And_SelectTasks(int employeeId)
-        {
-            if (con.State != System.Data.ConnectionState.Open)
-            {
-                con.Open();
-            }
-            SqlDataReader dr = null;
-
-            try
-            {
-                dr = com_select_employee.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-            return dr;
-        }
         //EMPLOYEES LİSTESİ DÖNDÜRME
         public List<Employee> Get_EmployeeList()
         {
-            SqlDataReader dr = Get_SqlDataReader_And_SelectEmployees();
-            List<Employee> employees = new List<Employee>();
             OpenConnection();
+            SqlDataReader dr = null;
+            SqlCommand com = new SqlCommand("select EmployeeID, FirstName, LastName, Title, BirthDate, Country, HireDate, Address, Notes, HomePhone from Employees", con);
+            try
+            {
+                
+                dr = com.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            List<Employee> employees = new List<Employee>();
             if (dr != null && dr.HasRows)
             {
                 try
@@ -127,7 +98,8 @@ namespace OdevPersoneleGorevAta
         //TASK LİSTESİ DÖNDÜRME
         public List<Task> Get_TaskList(int employeeId)
         {
-            SqlDataReader dr = Get_SqlDataReader_And_SelectEmployees();
+            SqlCommand com_select_employee = new SqlCommand("select EmployeeID, FirstName, LastName, Title, BirthDate, Country, HireDate, Address, Notes, HomePhone from Employees", con);
+            SqlDataReader dr = com_select_employee.ExecuteReader();
             List<Task> employees = new List<Task>();
             OpenConnection();
 

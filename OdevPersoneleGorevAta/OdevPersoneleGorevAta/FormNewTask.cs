@@ -10,15 +10,13 @@ namespace OdevPersoneleGorevAta
         private void FormEmployeeTask_Load(object sender, EventArgs e)
         {
             con = NorthWind_Connection.Connection;
-            com = Northwind_Command.SqlCommand_InsertTask;
         }
         #endregion
 
         SqlConnection con;
-        SqlCommand com;
 
-        InsertTask insert_Task_db = new InsertTask();
-        InsertEmployeeTasks insert_EmployeeTasks_db = new InsertEmployeeTasks();
+        Db_Tasks insert_Task_db = new Db_Tasks();
+        Db_EmployeeTasks insert_EmployeeTasks_db = new Db_EmployeeTasks();
 
 
         #region ÇALIŞANA GÖREV ATAMASI

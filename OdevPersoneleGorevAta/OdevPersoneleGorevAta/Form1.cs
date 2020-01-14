@@ -10,7 +10,7 @@ namespace OdevPersoneleGorevAta
         {
             InitializeComponent();
         }
-        SelectEmployee employee_selectdb = new SelectEmployee();
+        Db_Employee employee_selectdb = new Db_Employee();
         List<Employee> employeeList;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,11 +56,6 @@ namespace OdevPersoneleGorevAta
 
             FormNewTask frm = new FormNewTask(employee);
             frm.ShowDialog();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -46,7 +46,7 @@ namespace OdevPersoneleGorevAta
         {
             ShowMe();
         }
-        DeleteTask DeleteTask_db = new DeleteTask();
+        Db_EmployeeTasks DeleteTask_db = new Db_EmployeeTasks();
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (employee!=null)
@@ -56,22 +56,30 @@ namespace OdevPersoneleGorevAta
                 {
                     MessageBox.Show("Önce Silinecek Görevi Seçmelisiniz");
                     return;
-
                 }
 
                 Task task = (Task)selectedtask.Tag;
-                employee.Employee_TaskList.Remove(task);
-
-                int deletedCount = DeleteTask_db.Get_DeletedTrue_And_DeleteTask(task.Task_Id);
-                if (deletedCount > 0)
+                if (task!=null)
                 {
-                    //ShowMe();
-                    DialogResult = DialogResult.OK;
-                    MessageBox.Show("Görev Silindi");
+                    employee.Employee_TaskList.Remove(task);
+
+                    int deletedCount = DeleteTask_db.Get_DeletedTrue_And_DeleteEmployeeTask(employee.Employee_Id,task.Task_Id);
+                    if (deletedCount > 0)
+                    {
+                        //ShowMe();
+                        DialogResult = DialogResult.OK;
+                        MessageBox.Show("Görev Silindi");
+                    }
                 }
+                
             }
             
 
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
 
         }
     }
