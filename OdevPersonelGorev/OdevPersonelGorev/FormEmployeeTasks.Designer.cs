@@ -33,9 +33,9 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.lblEmployeeName = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -49,7 +49,6 @@
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(3, 42);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(651, 221);
@@ -77,48 +76,47 @@
             this.columnHeader4.Text = "TaskDateTime";
             this.columnHeader4.Width = 124;
             // 
-            // label1
+            // lblEmployeeName
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(654, 36);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEmployeeName.AutoEllipsis = true;
+            this.lblEmployeeName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lblEmployeeName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEmployeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEmployeeName.Location = new System.Drawing.Point(0, 0);
+            this.lblEmployeeName.Name = "lblEmployeeName";
+            this.lblEmployeeName.Size = new System.Drawing.Size(654, 36);
+            this.lblEmployeeName.TabIndex = 16;
+            this.lblEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnSil
+            // btnDelete
             // 
-            this.btnSil.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSil.FlatAppearance.BorderSize = 0;
-            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSil.Image = global::OdevPersonelGorev.Properties.Resources.delete_32px;
-            this.btnSil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSil.Location = new System.Drawing.Point(524, 269);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(130, 40);
-            this.btnSil.TabIndex = 14;
-            this.btnSil.Text = "Silme";
-            this.btnSil.UseVisualStyleBackColor = false;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.btnDelete.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::OdevPersonelGorev.Properties.Resources.delete_32px;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(524, 269);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(130, 40);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Silme";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnGuncelle
+            // btnUpdate
             // 
-            this.btnGuncelle.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnGuncelle.FlatAppearance.BorderSize = 0;
-            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuncelle.Image = global::OdevPersonelGorev.Properties.Resources.refresh_32px;
-            this.btnGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuncelle.Location = new System.Drawing.Point(388, 269);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(130, 40);
-            this.btnGuncelle.TabIndex = 15;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = false;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Image = global::OdevPersonelGorev.Properties.Resources.refresh_32px;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(388, 269);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 40);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // FormEmployeeTasks
             // 
@@ -127,12 +125,12 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(654, 312);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.btnGuncelle);
+            this.Controls.Add(this.lblEmployeeName);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Name = "FormEmployeeTasks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormEmployeeTasks";
+            this.Text = "Employee Tasks";
             this.Load += new System.EventHandler(this.FormEmployeeTasks_Load);
             this.ResumeLayout(false);
 
@@ -145,8 +143,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.Label lblEmployeeName;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

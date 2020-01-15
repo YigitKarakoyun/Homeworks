@@ -36,17 +36,17 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblTelefon = new System.Windows.Forms.Label();
-            this.lblNotlar = new System.Windows.Forms.Label();
-            this.lblAdres = new System.Windows.Forms.Label();
-            this.lblIseGirisTarihi = new System.Windows.Forms.Label();
+            this.lblHomePhone = new System.Windows.Forms.Label();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblHireDate = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGorevAta = new System.Windows.Forms.Button();
+            this.btnAssignTask = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnGorevleriGoster = new System.Windows.Forms.Button();
+            this.btnShowTasks = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,41 +113,41 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "..............................";
             // 
-            // lblTelefon
+            // lblHomePhone
             // 
-            this.lblTelefon.AutoSize = true;
-            this.lblTelefon.Location = new System.Drawing.Point(468, 92);
-            this.lblTelefon.Name = "lblTelefon";
-            this.lblTelefon.Size = new System.Drawing.Size(16, 13);
-            this.lblTelefon.TabIndex = 0;
-            this.lblTelefon.Text = "...";
+            this.lblHomePhone.AutoSize = true;
+            this.lblHomePhone.Location = new System.Drawing.Point(468, 92);
+            this.lblHomePhone.Name = "lblHomePhone";
+            this.lblHomePhone.Size = new System.Drawing.Size(16, 13);
+            this.lblHomePhone.TabIndex = 0;
+            this.lblHomePhone.Text = "...";
             // 
-            // lblNotlar
+            // lblNotes
             // 
-            this.lblNotlar.AutoSize = true;
-            this.lblNotlar.Location = new System.Drawing.Point(67, 155);
-            this.lblNotlar.Name = "lblNotlar";
-            this.lblNotlar.Size = new System.Drawing.Size(16, 13);
-            this.lblNotlar.TabIndex = 0;
-            this.lblNotlar.Text = "...";
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(67, 155);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(16, 13);
+            this.lblNotes.TabIndex = 0;
+            this.lblNotes.Text = "...";
             // 
-            // lblAdres
+            // lblAddress
             // 
-            this.lblAdres.AutoSize = true;
-            this.lblAdres.Location = new System.Drawing.Point(67, 92);
-            this.lblAdres.Name = "lblAdres";
-            this.lblAdres.Size = new System.Drawing.Size(16, 13);
-            this.lblAdres.TabIndex = 0;
-            this.lblAdres.Text = "...";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(67, 92);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(16, 13);
+            this.lblAddress.TabIndex = 0;
+            this.lblAddress.Text = "...";
             // 
-            // lblIseGirisTarihi
+            // lblHireDate
             // 
-            this.lblIseGirisTarihi.AutoSize = true;
-            this.lblIseGirisTarihi.Location = new System.Drawing.Point(106, 26);
-            this.lblIseGirisTarihi.Name = "lblIseGirisTarihi";
-            this.lblIseGirisTarihi.Size = new System.Drawing.Size(16, 13);
-            this.lblIseGirisTarihi.TabIndex = 0;
-            this.lblIseGirisTarihi.Text = "...";
+            this.lblHireDate.AutoSize = true;
+            this.lblHireDate.Location = new System.Drawing.Point(106, 26);
+            this.lblHireDate.Name = "lblHireDate";
+            this.lblHireDate.Size = new System.Drawing.Size(16, 13);
+            this.lblHireDate.TabIndex = 0;
+            this.lblHireDate.Text = "...";
             // 
             // label8
             // 
@@ -176,30 +176,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "İşe Giriş Tarihi:";
             // 
-            // btnGorevAta
+            // btnAssignTask
             // 
-            this.btnGorevAta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnGorevAta.FlatAppearance.BorderSize = 0;
-            this.btnGorevAta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGorevAta.Image = global::OdevPersonelGorev.Properties.Resources.icons8_identification_documents_32;
-            this.btnGorevAta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGorevAta.Location = new System.Drawing.Point(275, 390);
-            this.btnGorevAta.Name = "btnGorevAta";
-            this.btnGorevAta.Size = new System.Drawing.Size(190, 39);
-            this.btnGorevAta.TabIndex = 10;
-            this.btnGorevAta.Text = "Görev Ata";
-            this.btnGorevAta.UseVisualStyleBackColor = false;
-            this.btnGorevAta.Click += new System.EventHandler(this.btnGorevAta_Click);
+            this.btnAssignTask.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAssignTask.FlatAppearance.BorderSize = 0;
+            this.btnAssignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignTask.Image = global::OdevPersonelGorev.Properties.Resources.icons8_identification_documents_32;
+            this.btnAssignTask.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAssignTask.Location = new System.Drawing.Point(275, 390);
+            this.btnAssignTask.Name = "btnAssignTask";
+            this.btnAssignTask.Size = new System.Drawing.Size(190, 39);
+            this.btnAssignTask.TabIndex = 10;
+            this.btnAssignTask.Text = "Görev Ata";
+            this.btnAssignTask.UseVisualStyleBackColor = false;
+            this.btnAssignTask.Click += new System.EventHandler(this.btnAssignTask_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.lblTelefon);
-            this.groupBox1.Controls.Add(this.lblNotlar);
-            this.groupBox1.Controls.Add(this.lblAdres);
-            this.groupBox1.Controls.Add(this.lblIseGirisTarihi);
+            this.groupBox1.Controls.Add(this.lblHomePhone);
+            this.groupBox1.Controls.Add(this.lblNotes);
+            this.groupBox1.Controls.Add(this.lblAddress);
+            this.groupBox1.Controls.Add(this.lblHireDate);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
@@ -220,20 +220,20 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Adres:";
             // 
-            // btnGorevleriGoster
+            // btnShowTasks
             // 
-            this.btnGorevleriGoster.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnGorevleriGoster.FlatAppearance.BorderSize = 0;
-            this.btnGorevleriGoster.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGorevleriGoster.Image = global::OdevPersonelGorev.Properties.Resources.bulleted_list_32px;
-            this.btnGorevleriGoster.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGorevleriGoster.Location = new System.Drawing.Point(471, 390);
-            this.btnGorevleriGoster.Name = "btnGorevleriGoster";
-            this.btnGorevleriGoster.Size = new System.Drawing.Size(172, 39);
-            this.btnGorevleriGoster.TabIndex = 9;
-            this.btnGorevleriGoster.Text = "Görevleri Göster";
-            this.btnGorevleriGoster.UseVisualStyleBackColor = false;
-            this.btnGorevleriGoster.Click += new System.EventHandler(this.btnGorevleriGoster_Click);
+            this.btnShowTasks.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnShowTasks.FlatAppearance.BorderSize = 0;
+            this.btnShowTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowTasks.Image = global::OdevPersonelGorev.Properties.Resources.bulleted_list_32px;
+            this.btnShowTasks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShowTasks.Location = new System.Drawing.Point(471, 390);
+            this.btnShowTasks.Name = "btnShowTasks";
+            this.btnShowTasks.Size = new System.Drawing.Size(172, 39);
+            this.btnShowTasks.TabIndex = 9;
+            this.btnShowTasks.Text = "Görevleri Göster";
+            this.btnShowTasks.UseVisualStyleBackColor = false;
+            this.btnShowTasks.Click += new System.EventHandler(this.btnShowTasks_Click);
             // 
             // Form1
             // 
@@ -242,12 +242,12 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(655, 438);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnGorevAta);
+            this.Controls.Add(this.btnAssignTask);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnGorevleriGoster);
+            this.Controls.Add(this.btnShowTasks);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "EMPLOYEES";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -265,17 +265,17 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTelefon;
-        private System.Windows.Forms.Label lblNotlar;
-        private System.Windows.Forms.Label lblAdres;
-        private System.Windows.Forms.Label lblIseGirisTarihi;
+        private System.Windows.Forms.Label lblHomePhone;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblHireDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnGorevAta;
+        private System.Windows.Forms.Button btnAssignTask;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnGorevleriGoster;
+        private System.Windows.Forms.Button btnShowTasks;
     }
 }
 

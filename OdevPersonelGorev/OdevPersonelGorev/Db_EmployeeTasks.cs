@@ -60,15 +60,13 @@ namespace OdevPersonelGorev
             return tasks;
         }
         //--------------------------------------------------------------
-        //Update Tasks Set TaskName = @TaskName, TaskDescription = @TaskDescription,TaskDateTime=@TaskDateTime Where TaskId=
+        #region INSERT
         public bool Get_InsertedTrue_And_Insert_EmployeeId_And_TaskId(int EmployeeID, int TaskID)
         {
             //BAĞLANTI AÇMA
             OpenConnection();
 
             SqlCommand com = new SqlCommand("insert into EmployeeTasks(EmployeeID, TaskID) Values("+EmployeeID+", "+ TaskID+")", con);
-
-        
 
             int id = 0;
             try
@@ -84,7 +82,9 @@ namespace OdevPersonelGorev
             CloseConnection();
             return id > 0;
         }
+        #endregion
 
+        #region DELETE
         public int Get_DeletedTrue_And_DeleteEmployeeTask(int employee_id, int task_Id)
         {
             int deletedCount = 0;
@@ -102,31 +102,7 @@ namespace OdevPersonelGorev
 
             return deletedCount;
         }
-
-        
-
-        #region DELETE
-        //public int Get_DeletedTrue_And_DeleteTask(int taskId)
-        //{
-        //    int deletedCount = 0;
-        //    OpenConnection();
-
-        //    try
-        //    {
-        //        SqlCommand com_DeleteTasks = new SqlCommand("Update EmployeeTasks Set EmployeeTasks_Visible = 0 Where EmployeeTasks_TaskId =" + taskId);
-        //        deletedCount = com_DeleteTasks.ExecuteNonQuery();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-
-        //    return deletedCount;
-        //}
-
         #endregion
-        //
-
 
     }
 }

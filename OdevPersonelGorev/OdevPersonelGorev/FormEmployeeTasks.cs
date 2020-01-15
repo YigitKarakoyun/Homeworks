@@ -17,7 +17,7 @@ namespace OdevPersonelGorev
 
         private void FormEmployeeTasks_Load(object sender, EventArgs e)
         {
-            label1.Text = employee.Employee_FirstName + " " + employee.Employee_LastName;
+            lblEmployeeName.Text = employee.Employee_FirstName + " " + employee.Employee_LastName;
             Set_ListViewItems();
         }
         
@@ -46,8 +46,8 @@ namespace OdevPersonelGorev
         }
         #endregion
 
-        Db_EmployeeTasks DeleteTask_db = new Db_EmployeeTasks();
-        private void btnSil_Click(object sender, EventArgs e)
+        Db_EmployeeTasks db_EmployeeTasks = new Db_EmployeeTasks();
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (employee != null)
             {
@@ -63,7 +63,7 @@ namespace OdevPersonelGorev
                 {
                     employee.Employee_TaskList.Remove(task);
 
-                    int deletedCount = DeleteTask_db.Get_DeletedTrue_And_DeleteEmployeeTask(employee.EmployeeID, task.Task_Id);
+                    int deletedCount = db_EmployeeTasks.Get_DeletedTrue_And_DeleteEmployeeTask(employee.EmployeeID, task.Task_Id);
                     if (deletedCount > 0)
                     {
                         Set_ListViewItems();
@@ -75,7 +75,7 @@ namespace OdevPersonelGorev
             }
         }
 
-        private void btnGuncelle_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             Task task = (Task)listView1.FocusedItem.Tag;
             if (task == null)

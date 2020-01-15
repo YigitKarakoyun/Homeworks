@@ -75,13 +75,13 @@ namespace OdevPersonelGorev
             Employee employee = (Employee)listView1.FocusedItem.Tag;
             EmployeeDetail personelDetail = employee.EmployeeDetails;
 
-            lblIseGirisTarihi.Text = personelDetail.Employee_HireDate.ToString();
-            lblAdres.Text = personelDetail.Employee_Adress;
-            lblNotlar.Text = personelDetail.Employee_Notes;
-            lblTelefon.Text = personelDetail.Employee_HomePhone;
+            lblHireDate.Text = personelDetail.Employee_HireDate.ToString();
+            lblAddress.Text = personelDetail.Employee_Adress;
+            lblNotes.Text = personelDetail.Employee_Notes;
+            lblHomePhone.Text = personelDetail.Employee_HomePhone;
         }
 
-        private void btnGorevleriGoster_Click(object sender, EventArgs e)
+        private void btnShowTasks_Click(object sender, EventArgs e)
         {
             var selectedItem = listView1.FocusedItem;
             if (selectedItem != null)
@@ -95,7 +95,7 @@ namespace OdevPersonelGorev
             }
         }
 
-        private void btnGorevAta_Click(object sender, EventArgs e)
+        private void btnAssignTask_Click(object sender, EventArgs e)
         {
             Employee employee = (Employee)listView1.FocusedItem.Tag;
             if (employee == null)

@@ -142,7 +142,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormNewTask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormNewTask";
+            this.Text = "New Task";
             this.Load += new System.EventHandler(this.FormNewTask_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

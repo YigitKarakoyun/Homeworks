@@ -79,6 +79,10 @@ namespace OdevPersonelGorev
                     MessageBox.Show("Kaydınız Başarılı İle Tamamlanmıştır.");
                     DialogResult = DialogResult.OK;
                 }
+                else
+                {
+                    lblHataMesaji.Text = "";
+                }
             }
             
             else
