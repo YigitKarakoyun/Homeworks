@@ -63,7 +63,6 @@ namespace OdevPersonelGorev
         #region INSERT
 
 
-        //Update Tasks Set TaskName = @TaskName, TaskDescription = @TaskDescription,TaskDateTime=@TaskDateTime Where TaskId=
         public int Get_TaskID_And_InsertTask(string task_Name, string task_Description, DateTime task_Date)
         {
             SqlCommand com = new SqlCommand("insert into Tasks(TaskName, TaskDescription, TaskDate) Values(@TaskName, @TaskDescription, @TaskDate) Select @@IDENTITY", con);
