@@ -21,7 +21,8 @@ namespace ConsoleAppWord.Maker
             {
                 temp += GetString_One();
             }
-            AllList.Eight = temp;
+            
+            AllList.Eight = StringSort.Get_SortedString(temp); ;
         }
         //-------------------------------------------------------------
         private static LinkedList<string> Get_LinkedList(string str)
@@ -49,7 +50,7 @@ namespace ConsoleAppWord.Maker
             return temp;
         }
         
-        //Linked Listleri Oluşturma
+        //Linked Listleri Doldurma
         private static void Set_LinkedLists(LinkedList<string> tempList, LinkedList<string> temp)
         {
             temp.Clear();
