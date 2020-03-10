@@ -39,8 +39,8 @@ namespace ConsoleAppWord_Database
             var result = (from s in list
                           where word.Length == s.WORD_LENGTH &&
                           s.ToString() == StringSort.Get_SortedString(word)
-                          select s).SingleOrDefault();
+                          select s).FirstOrDefault();
             return result;
-        }
+        }//Sıra birden çok değer içeriyor
     }
 }

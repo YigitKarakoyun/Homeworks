@@ -21,11 +21,22 @@ namespace ConsoleAppWord
             //Tools.Insert_Db_From_TXT();
 
             var tools = Tools.Get_Words();
-            TBL_WORDS word = Tools.Get_Word(tools, "ZÜRRİYET");
-            if (word!=null)
+            //TBL_WORDS word = Tools.Get_Word(tools, "ZÜRRİYET");
+            //if (word!=null)
+            //{
+            //    Console.WriteLine(word.WORD+"\n"+word+"\n"+word.ID);
+            //}
+            var temp = AllList.FourList;
+            foreach (var item in temp)
             {
-                Console.WriteLine(word.WORD+"\n"+word+"\n"+word.ID);
+                TBL_WORDS word = Tools.Get_Word(tools, item);
+                if (word != null)
+                {
+                    Console.WriteLine(word.WORD + "\t" + word + "\t" + word.ID);
+                }
             }
+            Console.WriteLine("Arama Bitti");
+
             Console.Read();
         }
 
