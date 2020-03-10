@@ -107,10 +107,9 @@ namespace ConsoleAppWord_Compare
                 }
 
             }
-
-
             return temp;
         }
+
         //public static string Get2()
         //{
         //    string temp = "";
