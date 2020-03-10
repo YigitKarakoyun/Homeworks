@@ -1,5 +1,4 @@
 ﻿using ConsoleAppWord_Entity;
-using ConsoleAppWord_Maker;
 using ConsoleAppWord_Sort;
 using System.Collections.Generic;
 
@@ -9,7 +8,7 @@ namespace ConsoleAppWord_Compare
     {
         public static bool GetSame(string word1, string word2)
         {
-            if (word1.Length!=word2.Length)
+            if (word1.Length != word2.Length)
             {
                 return false;
             }
@@ -17,7 +16,7 @@ namespace ConsoleAppWord_Compare
         }
         public static string GetSame_Word(string word, string word_sorted)
         {
-            if (GetSame(word,word_sorted))
+            if (GetSame(word, word_sorted))
             {
                 return word;
             }
@@ -35,13 +34,13 @@ namespace ConsoleAppWord_Compare
             {
                 foreach (var item2 in words)
                 {
-                    if (GetSame(item,item2))
+                    if (GetSame(item, item2))
                     {
                         return item2;
-       
+
                     }
                 }
-                
+
             }
             return temp;
         }
@@ -86,6 +85,72 @@ namespace ConsoleAppWord_Compare
             }
             return temp;
         }
-       
+        /// <summary>
+        /// //
+        /// </summary>
+        /// <param name="linkedlist"></param>
+        /// <returns></returns>
+        public static string Get2(LinkedList<string> linkedlist, int count)
+        {
+            string temp = "";
+            Dictionary<int, List<string>> words = AllWords.listem;
+
+            foreach (var item in linkedlist)
+            {
+                foreach (var item2 in words[count])
+                {
+                    if (GetSame(item, item2))
+                    {
+                        return item2;
+
+                    }
+                }
+
+            }
+
+
+            return temp;
+        }
+        public static string Get2()
+        {
+            string temp = "";
+            var words = AllWords.list;
+            temp = Get2(AllList.NineList,9);
+            if (temp != "")
+            {
+                return temp;
+            }
+            temp = Get2(AllList.EightList,8);
+            if (temp != "")
+            {
+                return temp;
+            }
+            temp = Get2(AllList.SevenList,7);
+            if (temp != "")
+            {
+                return temp;
+            }
+            temp = Get2(AllList.SixList,6);
+            if (temp != "")
+            {
+                return temp;
+            }
+            temp = Get2(AllList.FiveList,5);
+            if (temp != "")
+            {
+                return temp;
+            }
+            temp = Get2(AllList.FourList,4);
+            if (temp != "")
+            {
+                return temp;
+            }
+            temp = Get2(AllList.ThreeList,3);
+            if (temp != "")
+            {
+                return temp;
+            }
+            return temp;
+        }
     }
 }

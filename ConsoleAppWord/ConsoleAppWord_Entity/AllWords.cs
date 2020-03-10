@@ -9,6 +9,7 @@ namespace ConsoleAppWord_Entity
 {
     public class AllWords
     {
+        public static Dictionary<int, List<string>> listem = new Dictionary<int, List<string>>();
         public static LinkedList<string> list = new LinkedList<string>();
         static string  temp = @"C:\Users\Samsung\Documents\GitHub\Homeworks\ConsoleAppWord\ConsoleAppWord\Resources\Words.txt";
         public static void SetDosyaOku()
@@ -26,7 +27,16 @@ namespace ConsoleAppWord_Entity
                     yazi = yazi.ToUpper();
                     list.AddLast(yazi);
 
-                    
+                    int size = yazi.Length;
+                    if (!listem.Keys.Contains(size))
+                    {
+                        listem.Add(size, new List<string>() { yazi });
+                    }
+                    else
+                    {
+                        (listem[size]).Add(yazi);
+                    }
+
                 }
                
 
