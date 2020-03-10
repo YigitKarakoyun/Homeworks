@@ -116,7 +116,7 @@ namespace ConsoleAppWord
                 //              where Compare_Strings.GetSame(str1, str2)
                 //              select str1).SingleOrDefault();
                 bool result = false;
-                var same = Compare_Strings.Get2();
+                var same = Compare_Strings.Get2(AllList.NineList, 9);
                 if (same == "")
                 {
                     Console.WriteLine("9 NULL");
