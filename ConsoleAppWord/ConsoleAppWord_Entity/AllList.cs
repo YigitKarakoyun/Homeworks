@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsoleAppWord.Entity
+namespace ConsoleAppWord_Entity
 {
-    class AllList
+    public class AllList
     {
         public static string Eight { get; set; } = "";
         public static LinkedList<string> Seven { get; set; } = new LinkedList<string>();
@@ -20,6 +20,6 @@ namespace ConsoleAppWord.Entity
         public static LinkedList<string> FourList { get; set; } = new LinkedList<string>();
         public static LinkedList<string> ThreeList { get; set; } = new LinkedList<string>();
 
-        
+        public static LinkedList<string>[] NumberList { get; private set; } = { NineList, EightList ,SevenList, SixList,FiveList,FourList,ThreeList}; 
     }
 }

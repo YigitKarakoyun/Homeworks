@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 
-namespace ConsoleAppWord.Entity
+namespace ConsoleAppWord_Entity
 {
-    class Letters
+    public class Letters
     {
         public static string[] Letter { get;private set; } = new string[]
         {

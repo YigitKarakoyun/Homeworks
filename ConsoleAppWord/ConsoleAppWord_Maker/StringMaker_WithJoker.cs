@@ -1,10 +1,11 @@
-﻿using ConsoleAppWord.Entity;
+﻿using ConsoleAppWord_Entity;
+using ConsoleAppWord_Sort;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsoleAppWord.Maker
+namespace ConsoleAppWord_Maker
 {
-    class StringMaker_WithJoker
+   public class StringMaker_WithJoker
     {
 
         private static void Set_LinkedList(LinkedList<string> temp, LinkedList<string> tempLess)

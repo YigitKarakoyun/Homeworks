@@ -1,10 +1,11 @@
-﻿using ConsoleAppWord.Entity;
+﻿using ConsoleAppWord_Entity;
+using ConsoleAppWord_Sort;
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleAppWord.Maker
+namespace ConsoleAppWord_Maker
 {
-    class StringMaker
+    public class StringMaker
     {
         static Random rand = new Random();
         //----------------------------------------------

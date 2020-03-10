@@ -1,21 +1,22 @@
-﻿using ConsoleAppWord.Compare;
-using ConsoleAppWord.Entity;
-using ConsoleAppWord.Maker;
-using ConsoleAppWord.Scores;
+﻿using ConsoleAppWord_Compare;
+using ConsoleAppWord_Entity;
+using ConsoleAppWord_Maker;
 using System;
 using System.Collections.Generic;
-
-
 namespace ConsoleAppWord
 {
     class Program
     {
         static void Main(string[] args)
         {
+            AllWords.SetDosyaOku();
+
+
+
             Menu();
             Console.Read();
         }
-        static void Print(LinkedList<string> linkedList)
+        static void Print(ICollection<string> linkedList)
         {
             foreach (var item in linkedList)
             {
@@ -25,7 +26,7 @@ namespace ConsoleAppWord
         static void Print(string eight)
         {
             Console.WriteLine(eight);
-            
+
         }
         static void Print(char[] linkedList)
         {
@@ -76,7 +77,7 @@ namespace ConsoleAppWord
             Print("3 Basamaklı: " + AllList.ThreeList.Count);
             Print(AllList.ThreeList);
 
-            
+
         }
         static void PrintCounts()
         {
@@ -100,27 +101,115 @@ namespace ConsoleAppWord
                 Console.WriteLine("---Sekiz Basamaklı---");
                 Console.WriteLine("Değer: " + AllList.Eight);
 
-                PrintCounts();
-                Console.Write("Aranacak Kelime Giriniz: ");
-                var readme = Console.ReadLine().ToUpper();
-                
-                var temp = Compare_Strings.GetSameWord(readme);
-                Console.WriteLine("Bulunan Kelime: "+temp);
-                Console.WriteLine("Skor: "+Score.Get_Score(temp));
+                //PrintCounts();
+                //Console.Write("Aranacak Kelime Giriniz: ");
+                //var readme = Console.ReadLine().ToUpper();
+
+                //var temp = Compare_Strings.GetSameWord(readme);
+                //Console.WriteLine("Bulunan Kelime: "+temp);
+                //Console.WriteLine("Skor: "+Score.Get_Score(temp));
+
+
+                //var result = (from str1 in AllWords.list
+                //              from str2 in AllList.ThreeList
+                //              where Compare_Strings.GetSame(str1, str2)
+                //              select str1).SingleOrDefault();
+                bool result = false;
+                var same = Compare_Strings.Get1(AllList.NineList);
+                if (same == "")
+                {
+                    Console.WriteLine("9 NULL");
+                }
+                else
+                {
+                    Console.WriteLine(same);
+                    result = true;
+
+                }
+                if (!result)
+                {
+                    same = Compare_Strings.Get1(AllList.EightList);
+                    if (same == "")
+                    {
+                        Console.WriteLine("8 NULL");
+                    }
+                    else
+                    {
+                        Console.WriteLine(same);
+                        result = true;
+                    }
+                }
+                if (!result)
+                {
+                    same = Compare_Strings.Get1(AllList.SevenList);
+                    if (same == "")
+                    {
+                        Console.WriteLine("7 NULL");
+                    }
+                    else
+                    {
+                        Console.WriteLine(same);
+                        result = true;
+                    }
+                }
+
+                if (!result)
+                {
+                    same = Compare_Strings.Get1(AllList.SixList);
+                    if (same == "")
+                    {
+                        Console.WriteLine("6 NULL");
+                    }
+                    else
+                    {
+                        Console.WriteLine(same);
+                        result = true;
+                    }
+                }
+                if (!result)
+                {
+                    same = Compare_Strings.Get1(AllList.FiveList);
+                    if (same == "")
+                    {
+                        Console.WriteLine("5 NULL");
+                    }
+                    else
+                    {
+                        Console.WriteLine(same);
+                        result = true;
+                    }
+                }
+                if (!result)
+                {
+
+                    same = Compare_Strings.Get1(AllList.FourList);
+                    if (same == "")
+                    {
+                        Console.WriteLine("4 NULL");
+                    }
+                    else
+                    {
+                        Console.WriteLine(same);
+                        result = true;
+                    }
+                }
+                if (!result)
+                {
+                    same = Compare_Strings.Get1(AllList.ThreeList);
+                    if (same == "")
+                    {
+                        Console.WriteLine("3 NULL");
+                    }
+                    else
+                    {
+                        Console.WriteLine(same);
+                        result = true;
+                    }
+                }
 
 
                 // Key is available - read it
                 key = Console.ReadKey(true).Key;
-
-                //if (key == ConsoleKey.NumPad1)
-                //{
-                //    Console.WriteLine(ConsoleKey.NumPad1.ToString());
-                //}
-                //else if (key == ConsoleKey.NumPad2)
-                //{
-                //    Console.WriteLine(ConsoleKey.NumPad1.ToString());
-                //}
-
             } while (key != ConsoleKey.Escape);
         }
     }

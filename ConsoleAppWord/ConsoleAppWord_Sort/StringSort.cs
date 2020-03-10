@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ConsoleAppWord.Maker
+namespace ConsoleAppWord_Sort
 {
-    class StringSort
+    public class StringSort
     {
         public static string Get_SortedString(string str)
         {

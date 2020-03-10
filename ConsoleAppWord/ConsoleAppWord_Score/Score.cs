@@ -1,5 +1,5 @@
 ﻿
-namespace ConsoleAppWord.Scores
+namespace ConsoleAppWord_Score
 {
     public class Score
     {

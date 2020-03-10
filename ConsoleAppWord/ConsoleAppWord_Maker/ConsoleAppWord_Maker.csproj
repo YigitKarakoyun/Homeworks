@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B6D53C8-91EC-4A47-9852-8A9D2C7A4DED}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleAppWord</RootNamespace>
-    <AssemblyName>ConsoleAppWord</AssemblyName>
+    <ProjectGuid>{66A4A76D-92FD-44F5-8EA3-5A5DCA01EEBA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleAppWord_Maker</RootNamespace>
+    <AssemblyName>ConsoleAppWord_Maker</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,45 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="StringMaker.cs" />
+    <Compile Include="StringMaker_WithJoker.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Words.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Properties\TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleAppWord_Compare\ConsoleAppWord_Compare.csproj">
-      <Project>{2b367bb8-a18f-430b-a279-52ef45712a4d}</Project>
-      <Name>ConsoleAppWord_Compare</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ConsoleAppWord_Entity\ConsoleAppWord_Entity.csproj">
       <Project>{bed7532c-70df-415c-a090-0654ac48e185}</Project>
       <Name>ConsoleAppWord_Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ConsoleAppWord_Maker\ConsoleAppWord_Maker.csproj">
-      <Project>{66a4a76d-92fd-44f5-8ea3-5a5dca01eeba}</Project>
-      <Name>ConsoleAppWord_Maker</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ConsoleAppWord_Score\ConsoleAppWord_Score.csproj">
-      <Project>{4489718a-2ff2-4dc3-bf67-bf111cca10da}</Project>
-      <Name>ConsoleAppWord_Score</Name>
+    <ProjectReference Include="..\ConsoleAppWord_Sort\ConsoleAppWord_Sort.csproj">
+      <Project>{9AF296CD-0106-4B43-A617-A2CBAD9FAE41}</Project>
+      <Name>ConsoleAppWord_Sort</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
