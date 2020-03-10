@@ -206,8 +206,8 @@ namespace ConsoleAppWord
                         result = true;
                     }
                 }
-
-
+               var score = ConsoleAppWord_Score.Score.Get_Score(same);
+                Console.WriteLine(score+" Puan");
                 // Key is available - read it
                 key = Console.ReadKey(true).Key;
             } while (key != ConsoleKey.Escape);
