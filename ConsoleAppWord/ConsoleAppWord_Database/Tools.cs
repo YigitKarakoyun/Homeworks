@@ -41,6 +41,15 @@ namespace ConsoleAppWord_Database
                           s.ToString() == StringSort.Get_SortedString(word)
                           select s).FirstOrDefault();
             return result;
-        }//Sıra birden çok değer içeriyor
+        }
+        //public static TBL_WORDS Get_Word(TBL_WORDS[] list, string word)
+        //{
+        //    word = word.ToUpper();
+        //    var result = (from s in list
+        //                  where word.Length == s.WORD_LENGTH &&
+        //                  s.ToString() == StringSort.Get_SortedString(word)
+        //                  select s).FirstOrDefault();
+        //    return result;
+        //}
     }
 }

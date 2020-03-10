@@ -19,13 +19,14 @@ namespace ConsoleAppWord
 
             //İnsert DB
             //Tools.Insert_Db_From_TXT();
-
-            var tools = Tools.Get_Words();
+            //---------------------------------------------------
             //TBL_WORDS word = Tools.Get_Word(tools, "ZÜRRİYET");
             //if (word!=null)
             //{
             //    Console.WriteLine(word.WORD+"\n"+word+"\n"+word.ID);
             //}
+            //---------------------------------------------------
+            var tools = Tools.Get_Words();
             var temp = AllList.FourList;
             foreach (var item in temp)
             {
