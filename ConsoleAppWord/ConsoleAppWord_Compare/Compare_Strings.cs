@@ -90,25 +90,25 @@ namespace ConsoleAppWord_Compare
         /// </summary>
         /// <param name="linkedlist"></param>
         /// <returns></returns>
-        public static string Get2(LinkedList<string> linkedlist, int count)
-        {
-            string temp = "";
-            Dictionary<int, LinkedList<string>> words = AllWords.listem;
+        //public static string Get2(LinkedList<string> linkedlist, int count)
+        //{
+        //    string temp = "";
+        //    Dictionary<int, LinkedList<string>> words = AllWords.listem;
 
-            foreach (var item in linkedlist)
-            {
-                foreach (var item2 in words[count])
-                {
-                    if (GetSame(item, item2))
-                    {
-                        return item2;
+        //    foreach (var item in linkedlist)
+        //    {
+        //        foreach (var item2 in words[count])
+        //        {
+        //            if (GetSame(item, item2))
+        //            {
+        //                return item2;
 
-                    }
-                }
+        //            }
+        //        }
 
-            }
-            return temp;
-        }
+        //    }
+        //    return temp;
+        //}
 
         //public static string Get2()
         //{
@@ -151,5 +151,7 @@ namespace ConsoleAppWord_Compare
         //    }
         //    return temp;
         //}
+        //public static string AS()
+             
     }
 }

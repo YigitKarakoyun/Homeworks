@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleAppWord.Properties {
+namespace ConsoleAppWord_Database.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ConsoleAppWord.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ConsoleAppWord.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ConsoleAppWord_Database.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,63 +57,6 @@ namespace ConsoleAppWord.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a
-        ///a
-        ///a / e
-        ///ab
-        ///aba
-        ///abacı
-        ///abacılık
-        ///abadi
-        ///aba güreşi
-        ///abajur
-        ///abajurcu
-        ///abajurculuk
-        ///abajurlu
-        ///abajursuz
-        ///abaküs
-        ///abalı
-        ///Abana
-        ///abanabilme
-        ///abanabilmek
-        ///abandırabilme
-        ///abandırabilmek
-        ///abandırıverme
-        ///abandırıvermek
-        ///abandırma
-        ///abandırmak
-        ///abandone
-        ///abanış
-        ///abanıverme
-        ///abanıvermek
-        ///abani
-        ///abanma
-        ///abanmak
-        ///abanoz
-        ///abanozgiller
-        ///abanozlaşıverme
-        ///abanozlaşıvermek
-        ///abanozlaşma
-        ///abanozlaşmak
-        ///abanozlaştırabilme
-        ///abanozlaştırabilmek
-        ///abanozlaştırıverme
-        ///abanozlaştırıvermek
-        ///abanozlaştırma
-        ///abanozlaştırmak
-        ///abartabilme
-        ///abartabilmek
-        ///abartı
-        ///abartıcı
-        ///abartıc [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Words {
-            get {
-                return ResourceManager.GetString("Words", resourceCulture);
             }
         }
     }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66A4A76D-92FD-44F5-8EA3-5A5DCA01EEBA}</ProjectGuid>
+    <ProjectGuid>{5F3FA60C-B4EF-4336-BCC0-B690E00B2A36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleAppWord_Maker</RootNamespace>
@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleAppWord_Entity\ConsoleAppWord_Entity.csproj">
-      <Project>{bed7532c-70df-415c-a090-0654ac48e185}</Project>
+      <Project>{30794DE9-5BEF-4976-A90E-571DA2032D57}</Project>
       <Name>ConsoleAppWord_Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\ConsoleAppWord_Sort\ConsoleAppWord_Sort.csproj">
-      <Project>{9AF296CD-0106-4B43-A617-A2CBAD9FAE41}</Project>
+      <Project>{7118C1CA-1205-4902-8C3E-CC11AEFFB787}</Project>
       <Name>ConsoleAppWord_Sort</Name>
     </ProjectReference>
   </ItemGroup>

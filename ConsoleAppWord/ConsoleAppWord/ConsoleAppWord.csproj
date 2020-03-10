@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B6D53C8-91EC-4A47-9852-8A9D2C7A4DED}</ProjectGuid>
+    <ProjectGuid>{F1FDDC29-ED3E-4BF9-BFB3-D833C2DFBDCB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ConsoleAppWord</RootNamespace>
     <AssemblyName>ConsoleAppWord</AssemblyName>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,9 +36,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,44 +55,44 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Words.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Properties\TextFile1.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleAppWord_Compare\ConsoleAppWord_Compare.csproj">
-      <Project>{2b367bb8-a18f-430b-a279-52ef45712a4d}</Project>
+      <Project>{5cfae7d3-d3e2-4c66-b57e-1c324ae6b117}</Project>
       <Name>ConsoleAppWord_Compare</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ConsoleAppWord_Database\ConsoleAppWord_Database.csproj">
+      <Project>{8FC99028-5249-44CD-BD8D-C4B2917DF5DB}</Project>
+      <Name>ConsoleAppWord_Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConsoleAppWord_Entity\ConsoleAppWord_Entity.csproj">
-      <Project>{bed7532c-70df-415c-a090-0654ac48e185}</Project>
+      <Project>{30794DE9-5BEF-4976-A90E-571DA2032D57}</Project>
       <Name>ConsoleAppWord_Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\ConsoleAppWord_Maker\ConsoleAppWord_Maker.csproj">
-      <Project>{66a4a76d-92fd-44f5-8ea3-5a5dca01eeba}</Project>
+      <Project>{5F3FA60C-B4EF-4336-BCC0-B690E00B2A36}</Project>
       <Name>ConsoleAppWord_Maker</Name>
     </ProjectReference>
     <ProjectReference Include="..\ConsoleAppWord_Score\ConsoleAppWord_Score.csproj">
-      <Project>{4489718a-2ff2-4dc3-bf67-bf111cca10da}</Project>
+      <Project>{cd53f1e3-1b79-46bd-8676-568361eecadf}</Project>
       <Name>ConsoleAppWord_Score</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConsoleAppWord_Sort\ConsoleAppWord_Sort.csproj">
+      <Project>{7118c1ca-1205-4902-8c3e-cc11aeffb787}</Project>
+      <Name>ConsoleAppWord_Sort</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

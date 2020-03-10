@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BED7532C-70DF-415C-A090-0654AC48E185}</ProjectGuid>
+    <ProjectGuid>{30794DE9-5BEF-4976-A90E-571DA2032D57}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleAppWord_Entity</RootNamespace>
@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleAppWord_Sort\ConsoleAppWord_Sort.csproj">
-      <Project>{9AF296CD-0106-4B43-A617-A2CBAD9FAE41}</Project>
+      <Project>{7118c1ca-1205-4902-8c3e-cc11aeffb787}</Project>
       <Name>ConsoleAppWord_Sort</Name>
     </ProjectReference>
   </ItemGroup>
