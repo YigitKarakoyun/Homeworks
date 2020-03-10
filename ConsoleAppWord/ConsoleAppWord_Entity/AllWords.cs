@@ -9,13 +9,14 @@ namespace ConsoleAppWord_Entity
 {
     public class AllWords
     {
-        public static Dictionary<int, List<string>> listem = new Dictionary<int, List<string>>();
-        public static LinkedList<string> list = new LinkedList<string>();
+        public static Dictionary<int, LinkedList<string>> listem = new Dictionary<int, LinkedList<string>>();
+        //public static LinkedList<string> list = new LinkedList<string>();
         static string  temp = @"C:\Users\Samsung\Documents\GitHub\Homeworks\ConsoleAppWord\ConsoleAppWord\Resources\Words.txt";
         public static void SetDosyaOku()
         {
             string dosyaTamYolu = temp;
-            list.Clear();
+            //list.Clear();
+            listem.Clear();
             FileStream fs = new FileStream(dosyaTamYolu, FileMode.Open, FileAccess.Read);
             StreamReader sw = new StreamReader(fs);
             string yazi = sw.ReadLine();
@@ -25,16 +26,18 @@ namespace ConsoleAppWord_Entity
                 if (yazi != null && yazi.Length>2 && yazi.Length<10)
                 {
                     yazi = yazi.ToUpper();
-                    list.AddLast(yazi);
+                    //list.AddLast(yazi);
 
                     int size = yazi.Length;
                     if (!listem.Keys.Contains(size))
                     {
-                        listem.Add(size, new List<string>() { yazi });
+                        LinkedList<string> linkedList = new LinkedList<string>();
+                        linkedList.AddLast(yazi);
+                        listem.Add(size, linkedList);
                     }
                     else
                     {
-                        (listem[size]).Add(yazi);
+                        (listem[size]).AddFirst(yazi);
                     }
 
                 }
