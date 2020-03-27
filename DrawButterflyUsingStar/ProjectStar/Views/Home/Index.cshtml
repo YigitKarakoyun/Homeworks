@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "England Flag";
+}
+@model List<string>
+<html>
+<head>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!--Get your own code at fontawesome.com-->
+</head>
+<body>
+    <h1 style="font-size:110px;color:royalblue">***YILDIZ***</h1>
+    <table>
+        @foreach (var word in Model)
+        {
+            <tr>
+                @foreach (var car in word)
+                {
+
+                    if (car == '*')
+                    {
+                        <td class='fa fa-star' style='font-size:36px;color:darkblue'></td>
+                    }
+                    else
+                    {
+
+                        <td class='fa fa-star' style='font-size:36px;color:white'></td>
+                    } 
+                }
+            </tr>
+
+
+        }
+    </table>
+
+
+</body>
+</html>
