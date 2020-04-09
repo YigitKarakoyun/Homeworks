@@ -1,22 +1,20 @@
-﻿@using PagedList
+﻿@using ProjectPagedList.Entity
+@using PagedList
 @using PagedList.Mvc
-@using ProjectPagedList.Entity
-
 @model PagedList.IPagedList<TBL_MEYVELER>
 @{
     Layout = null;
 }
+
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/PagedList.css" rel="stylesheet" />
-<h1>MEYVELER</h1>
 
-<table class="table table-bordered">
-
+<h1 style="margin-bottom:15px">MEYVELER TABLOSU</h1>
+<table class="table table-bordered" style="margin-bottom:15px">
     <tr>
         <th>#</th>
         <th>MEYVELER</th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
@@ -24,7 +22,6 @@
             <td>@item.MEYVE</td>
         </tr>
     }
-
 </table>
-@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
 
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index",new { sayfa }))

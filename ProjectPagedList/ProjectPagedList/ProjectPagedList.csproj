@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{32E77A16-A4F6-43A9-AB8F-848142D80B19}</ProjectGuid>
+    <ProjectGuid>{CF916F6A-7B59-474B-83F0-278F25C7A8FE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -248,16 +248,16 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjectPagedList.Entity\ProjectPagedList.Entity.csproj">
-      <Project>{6019640E-E7EA-4AB8-81C7-8EF593A21628}</Project>
-      <Name>ProjectPagedList.Entity</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectPagedList.Entity\ProjectPagedList.Entity.csproj">
+      <Project>{DF5C56D3-DBC5-4B6F-B519-661F9FA90230}</Project>
+      <Name>ProjectPagedList.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -273,9 +273,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52295</DevelopmentServerPort>
+          <DevelopmentServerPort>49944</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52295/</IISUrl>
+          <IISUrl>http://localhost:49944/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

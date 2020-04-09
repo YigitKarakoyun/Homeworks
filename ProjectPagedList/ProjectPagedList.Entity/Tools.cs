@@ -8,14 +8,14 @@ namespace ProjectPagedList.Entity
 {
     public class Tools
     {
-        static DbMeyvelerEntities db = null;
-        public static DbMeyvelerEntities GetMeyvelerEntities()
-        {
-            if (db==null)
+        static Model1 Meyveler = null;
+        public static Model1 GetMeyveler() {
+            if (Meyveler == null)
             {
-                db = new DbMeyvelerEntities();
+                Meyveler = new Model1();
             }
-            return db;
+            return Meyveler;
         }
+
     }
 }
